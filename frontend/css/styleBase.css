@@ -24,6 +24,10 @@ body{
 .home-servicos{
     background-color: black;
 }
+.Servicoscla {
+    background:
+    url("../Imagens/carro3.jpg")
+}
 .sobre{
     font-family: playfair display, serif;
     font-size: 1rem;
@@ -122,6 +126,117 @@ h3{
     height: auto;
     margin: 0;
 }
+table{
+    text-align: center;
+    margin: auto;
+}
+.Botão1 {
+    background-color: rgb(37, 50, 82);
+    font-family:'Times New Roman', Times, serif;
+    color:  rgb(255, 255, 255);
+    font-size:17px;
+    height: 100px;
+    width: 140px;
+    position: relative;
+    border: 2px solid #f8eff0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5); /* sombra externa */
+    transition: all 0.9s ease; /* animação suave */
+    
+}
+.Botão {
+    margin-left: 1px;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    font-size:17px;
+    background-color: rgb(37, 50, 82);
+    height: 100px;
+    width: 140px;
+    position: relative;
+    padding: 5;
+    border: 2px solid #f8eff0;
+    border-radius: 10px;
+    box-shadow:
+        4px 4px 8px rgba(0,0,0,0.5),   /* sombra inferior direita */
+        -2px -2px 5px rgba(255,255,255,0.2), /* “brilho” canto superior esquerdo */
+        inset 1px 1px 3px rgba(255,255,255,0.1); /* luz interna */
+    transition: all 0.9s ease; /* animação suave */
+}
+.Botão4 {
+    margin-left: 1px;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    font-size:17px;
+    background-color: rgb(37, 50, 82);
+    height: 100px;
+    width: 140px;
+    position: relative;
+    border: 2px solid #f8eff0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5); /* sombra externa */
+    transition: all 0.9s ease; /* animação suave */
+}
+main{
+    text-decoration: none;
+    display: flex;
+    margin-right: 20px;
+}
+.Botão:hover{
+    background-color: rgb(136, 67, 51);
+    cursor: pointer;
+      box-shadow:
+        inset 2px 2px 8px rgba(0,0,0,0.5), /* sombra interna maior */
+        -2px -2px 5px rgba(255,255,255,0.2);
+}
+.Botão1:hover{
+    background-color: rgb(136, 67, 51);
+    cursor: pointer;
+}
+.Botão4:hover {
+    background-color: rgb(136, 67, 55);
+    cursor: pointer;
+}
+.TextoServiço {
+    margin-left: 738px;
+}
+.Informaçoes {
+     background-color: rgb(37, 50, 82);
+    font-family:'Times New Roman', Times, serif;
+    color:  rgb(255, 255, 255);
+    font-size:17px;
+    display: block;
+    height: 100px;
+    width: 140px;
+    position: relative;
+    border: 2px solid #f8eff0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5); 
+    transition: all 0.9s ease;/*isso deixa o tempo para Aparecer a cor mais lento ou mais rapido*/
+     margin: 40px auto;                          
+     /*margin-top: 100px;  isso empurra pra baixo*/
+}
+.Informaçoes:hover {
+    background-color: rgb(136, 67, 51);
+    cursor: pointer;
+}
+.TextoServiço {
+    color: black;
+}
+.TituloSer{
+    font-size:50px;
+    margin-left: 100px;
+}
+.Apresentação{
+   margin-top: 120px;
+}
+.TextoApresem{
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* espaço perfeito entre textos */
+    
+}
 .cabecalho{
     display: flex;
     align-items: center;
@@ -158,6 +273,7 @@ main{
     gap: clamp(15px, 5vw, 70px);
     padding: 20px 0px;
     margin: auto;
+    margin-top: 350px;  
 }
 .redes a{
     text-decoration: none;
