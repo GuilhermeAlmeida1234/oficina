@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let slides = document.querySelectorAll(".slide");
 
-    // DUPLICA OS SLIDES
     slides.forEach(slide => {
         const clone = slide.cloneNode(true);
         carrossel.appendChild(clone);
@@ -15,19 +14,22 @@ document.addEventListener("DOMContentLoaded", function() {
     slides = document.querySelectorAll(".slide");
 
     let index = 0;
+    let intervalo;
+
+    function larguraSlide() {
+        return slides[0].offsetWidth + 20;
+    }
 
     function mover() {
-        const largura = slides[0].offsetWidth + 20;
         carrossel.style.transition = "transform 0.5s ease";
-        carrossel.style.transform = `translateX(-${index * largura}px)`;
+        carrossel.style.transform = `translateX(-${index * larguraSlide()}px)`;
     }
 
     next.addEventListener("click", () => {
         index++;
         mover();
 
-        // QUANDO CHEGAR NA METADE (fim original)
-        if (index >= slides.length / 2) {
+        if (index >= slides.length / 2 - 1) {
             setTimeout(() => {
                 carrossel.style.transition = "none";
                 index = 0;
@@ -40,14 +42,43 @@ document.addEventListener("DOMContentLoaded", function() {
         if (index <= 0) {
             carrossel.style.transition = "none";
             index = slides.length / 2;
-            const largura = slides[0].offsetWidth + 20;
-            carrossel.style.transform = `translateX(-${index * largura}px)`;
+            carrossel.style.transform = `translateX(-${index * larguraSlide()}px)`;
         }
 
         setTimeout(() => {
             index--;
             mover();
         }, 10);
+    });
+
+    function iniciarAutoPlay() {
+        clearInterval(intervalo);
+        intervalo = setInterval(() => {
+            next.click();
+        }, 3000);
+    }
+
+    function pararAutoPlay() {
+        clearInterval(intervalo);
+    }
+
+    if (window.innerWidth <= 768) {
+        iniciarAutoPlay();
+    }
+
+    carrossel.addEventListener("touchstart", pararAutoPlay);
+
+    carrossel.addEventListener("touchend", () => {
+        if (window.innerWidth <= 768) {
+            iniciarAutoPlay();
+        }
+    });
+
+    carrossel.addEventListener("mouseenter", pararAutoPlay);
+    carrossel.addEventListener("mouseleave", () => {
+        if (window.innerWidth <= 768) {
+            iniciarAutoPlay();
+        }
     });
 
 });
