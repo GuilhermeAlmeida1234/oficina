@@ -1,62 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head class="Servicoscla">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página de serviços da nossa oficina mecânica">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/styleBase.css">
     <title>Serviços</title>
+    <link rel="icone" href="../Imagens/black.png">
+    <link rel="stylesheet" href="../css/styleBase.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="home">
-    <header class="cabecalho">
-            <img src="../Imagens/gray.png" alt="Logo da Oficina" class="Logo">
-            <h2 class="TituloSer"> Serviços</h2>
-        <nav class="nav-list">
-            <ul>
-                <li class="nav" id="home"><a href="base.html">Início</a></li>
-                <li class="nav" id="servicos"><a href="servicos.html">Serviços</a></li>
-                <li class="nav" id="sobre"><a href="sobre.html">Sobre Nós</a></li>
-                <li class="nav" id="contato"><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
- <table>
-    <nav>
-    <h2 class="TextoServiço">Aqui estão nossos Principais serviços</h2>
-        <tr>
-            <td > <button class="Botão1"> Diagnostico </button></td>
-            <td > <button class="Botão"> Suspensão </button></td>
-            <td> <button  class="Botão" > Revisão </button> </td>
-            <td > <button class="Botão4">Alinhamento e Balanceamento </button></td>
-            <td > <button class="Botão"> Troca de óleo </button></td>
-        </tr>
-        <tr>
-        <td colspan="5" align="centralizar"> <button class="Informaçoes">  Mais Informações</button></td>
-        </tr>
-    </table>
-    </nav>.
-    </main>
- <footer class="pe">
-        <div class="redes">
-            <a href="https://wa.me/5511917700666" target="_blank" class="whatsapp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://instagram.com/marcosantonio" target="_blank" class="instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@edilson_famozin" target="_blank" class="tiktok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a href="https://twitter.com/futebol_info" target="_blank" class="twitter">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.youtube.com/@DeSolaOficial" target="_blank" class="youtube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
+<body class="home-servicos">
+
+<header class="cabecalho">
+    <img src="../Imagens/gray.png" class="Logo">
+    <nav class="nav-list">
+        <ul>
+            <li><a href="base.html">Início</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="usuario">
+            <i class="fa-solid fa-user" onclick="abrirLogin()"></i>
         </div>
-    
-    </footer>    
+    </nav>
+</header>
+<main>
+    <section class="conteudo">
+        <h1>Nossos Serviços</h1>
+        <p>Oferecemos soluções completas para o seu veículo.</p>
+    </section>
+    <section class="carrossel-container">
+        <button class="btn prev">&#10094;</button>
+
+        <div class="carrossel">
+            <div class="slide">
+                <img src="../Imagens/diagnostico.jpg" alt="Diagnóstico Completo">
+                <div class="overlay">
+                    <h2>Diagnóstico Completo</h2>
+                    <p>Identifiação precisa de problemas mecânicos.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/oleo.jpg" alt="Troca de Óleo">
+                <div class="overlay">
+                    <h2>Troca de Óleo</h2>
+                    <p>Manutenção preventiva para garantir o desempenho do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/motor.jpg" alt="Manutenção de Motor">
+                <div class="overlay">
+                    <h2>Manutenção de Motor</h2>
+                    <p>Serviços especializados para manutenção e reparo de motores.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/bateria.jpg" alt="Troca de Bateria">
+                <div class="overlay">
+                    <h2>Troca de Bateria</h2>
+                    <p>Substituição de baterias para garantir o funcionamento adequado do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/freio.jpg" alt="Reparo de Freios">
+                <div class="overlay">
+                    <h2>Reparo de Freios</h2>
+                    <p>Serviços de manutenção e reparo para garantir a segurança do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/suspensao.jpg" alt="Reparo de Suspensão">
+                <div class="overlay">
+                    <h2>Reparo de Suspensão</h2>
+                    <p>Serviços de manutenção e reparo para garantir o conforto e segurança do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/ar.jpg" alt="Reparo de Ar-condicionado">
+                <div class="overlay">
+                    <h2>Reparo de Ar-condicionado</h2>
+                    <p>Serviços de manutenção e reparo para garantir o conforto do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/eletrico.jpg" alt="Manutenção Elétrica">
+                <div class="overlay">
+                    <h2>Manutenção Elétrica</h2>
+                    <p>Serviços especializados para manutenção e reparo do sistema elétrico do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/alinhamento.jpg" alt="alinhamento e balanceamento">
+                <div class="overlay">
+                    <h2>Alinhamento e Balanceamento</h2>
+                    <p>Serviços especializados para garantir o desempenho e segurança do seu veículo.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Imagens/revisao.jpg" alt="Revisão Completa">
+                <div class="overlay">
+                    <h2>Revisão Completa</h2>
+                    <p>Serviços de manutenção preventiva para garantir o desempenho e segurança do seu veículo.</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn next">&#10095;</button>
+    </section>
+</main>
+<footer class="pe">
+    <div class="redes">
+    </div>
+</footer>
+<script src="../script/script.js"></script>
 </body>
 </html>
