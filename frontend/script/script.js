@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const clone = slide.cloneNode(true);
         carrossel.appendChild(clone);
     });
-
+    function larguraSlide() {
+    const estilo = window.getComputedStyle(slides[0]);
+    const gap = parseInt(estilo.marginRight) || 20;
+    return slides[0].offsetWidth + gap;
+    }
     slides = document.querySelectorAll(".slide");
 
     let index = 0;
