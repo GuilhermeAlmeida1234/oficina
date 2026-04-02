@@ -20,7 +20,7 @@
                 <li class="nav" id="contato"><a href="contato.html">Contato</a></li>
             </ul>
             <div class="usuario">
-                <i class="fa-solid fa-user" onclick="abrirLogin()"></i>
+                <i class="fa-solid fa-user" id="userIcon"></i>
             </div>
         </nav>
     </header>
@@ -75,5 +75,17 @@
             </a>
         </div>
     </footer>
+    <div class="modal" id="loginModal">
+        <div class="telaLogin">
+            <span class="fechar">&times;</span>
+            <h2>Login</h2>
+            <form id="formLogin">
+                <input type="email" name="Email" placeholder="Email" required>
+                <input type="password" name="Senha" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+<script src="../script/script.js"></script>
 </body>
 </html>

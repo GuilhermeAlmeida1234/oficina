@@ -85,4 +85,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    const userIcon = document.getElementById("userIcon");
+    const modal = document.getElementById("loginModal");
+    const fechar = document.querySelector(".fechar");
+    const form = document.getElementById("loginForm");
+
+    userIcon.addEventListener("click", () => {
+        modal.classList.add("active");
+    });
+
+    fechar.addEventListener("click", () => {
+        modal.classList.remove("active");
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const usuario = form.usuario.value;
+        const senha = form.senha.value;
+
+        if (usuario === "admin" && senha === "123") {
+            alert("Login realizado!");
+            modal.classList.remove("active");
+        } else {
+            alert("Usuário ou senha inválidos");
+        }
 });
+});
+

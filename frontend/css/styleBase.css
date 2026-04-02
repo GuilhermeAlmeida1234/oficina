@@ -243,6 +243,47 @@ textarea {
 .next{
     right: 10px;
 }
+.modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 10;
+}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.7);
+    transition: 0.3s;
+}
+.modal.active .modal-content {
+    transform: scale(1);
+}
+.modal-content input{
+    margin-top: 10px;
+}
+.fechar{
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.fechar:hover {
+    color: #ff5c00;
+}
 @media (max-width: 768px) {
     .cabecalho {
         flex-direction: column;
