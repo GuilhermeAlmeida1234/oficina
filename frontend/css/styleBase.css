@@ -10,6 +10,17 @@ body {
     display: flex;
     flex-direction: column;
 }
+h1, h2 {
+    text-shadow: 0 0 10px rgba(255, 92, 0, 0.3);
+}
+button {
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    box-shadow: 0 0 20px rgba(255, 92, 0, 0.4);
+}
 .home::before {
     content: "";
     position: fixed;
@@ -19,21 +30,58 @@ body {
         url("../Imagens/carro3.jpg") center/cover no-repeat;
     z-index: -1;
 }
-.home-servicos{
-    background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+.servicos::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 92, 0, 0.15), transparent 40%),
+        linear-gradient(180deg, #0d0d0d, #000);
+    z-index: -2;
 }
-.contato {
-    background-color: #000;
-    color: #fff;
+.servicos::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.02),
+            rgba(255,255,255,0.02) 2px,
+            transparent 2px,
+            transparent 12px
+        );
+    z-index: -1;
 }
-.sobre{
-    background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+.contato::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, rgba(255,92,0,0.25), transparent 60%),
+        linear-gradient(180deg, #000, #111);
+    z-index: -1;
+}
+.sobre::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.12), transparent 60%),
+        linear-gradient(180deg, #111, #000);
+    z-index: -1;
 }
 .cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
+    backdrop-filter: blur(12px);
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 .Logo {
     max-width: 120px;
@@ -114,7 +162,7 @@ p {
     transition: 0.3s;
 }
 .icone:hover {
-    transform: scale(1.2);
+    transform: scale(1.2) rotate(5deg);
 }
 form {
     margin-top: 20px;
