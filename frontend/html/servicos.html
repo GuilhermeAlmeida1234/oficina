@@ -118,7 +118,7 @@
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
                 <a href="https://twitter.com/" target="_blank" class="twitter icone">
-                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-x"></i>
                 </a>
                 <a href="https://www.youtube.com/" target="_blank" class="youtube icone">
                     <i class="fa-brands fa-youtube"></i>
@@ -126,6 +126,33 @@
             </div>
         </footer>
     </footer>
-<script src="../script/script.js"></script>
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Login</h2>
+            <form id="formLogin">
+                <input type="email" name="Email" placeholder="Email" required>
+                <input type="password" name="Senha" placeholder="Senha" required class="inputSenha">
+                <button type="submit" class="btnSubmit">Entrar</button>
+            </form>
+            <p>
+                Não tem uma conta?
+            </p>
+            <a href="#" id="abrirCadastro">Cadastre-se</a>
+        </div>
+    </div>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro">
+                <input type="email" name="email" placeholder="Email" required class="inputEmail">
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" required class="inputSenha">
+                <button type="submit" class="btnSubmit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="../script/script.js"></script>
 </body>
 </html>
