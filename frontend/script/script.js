@@ -1,8 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+const carrossel = document.querySelector(".carrossel");
+const next = document.querySelector(".next");
+const prev = document.querySelector(".prev");
 
-    const carrossel = document.querySelector(".carrossel");
-    const next = document.querySelector(".next");
-    const prev = document.querySelector(".prev");
+if (carrossel && next && prev) {
 
     let slides = document.querySelectorAll(".slide");
 
@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const clone = slide.cloneNode(true);
         carrossel.appendChild(clone);
     });
-    function larguraSlide() {
-    const estilo = window.getComputedStyle(slides[0]);
-    const gap = parseInt(estilo.marginRight) || 20;
-    return slides[0].offsetWidth + gap;
-    }
+
     slides = document.querySelectorAll(".slide");
 
     let index = 0;
@@ -71,51 +67,97 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     carrossel.addEventListener("touchstart", pararAutoPlay);
-
     carrossel.addEventListener("touchend", () => {
-        if (window.innerWidth <= 768) {
-            iniciarAutoPlay();
-        }
+        if (window.innerWidth <= 768) iniciarAutoPlay();
     });
 
     carrossel.addEventListener("mouseenter", pararAutoPlay);
     carrossel.addEventListener("mouseleave", () => {
-        if (window.innerWidth <= 768) {
-            iniciarAutoPlay();
-        }
+        if (window.innerWidth <= 768) iniciarAutoPlay();
     });
+}
 
-    const userIcon = document.getElementById("userIcon");
-    const modal = document.getElementById("loginModal");
-    const fechar = document.querySelector(".fechar");
-    const form = document.getElementById("loginForm");
+const userIcon = document.getElementById("userIcon");
+const loginModal = document.getElementById("loginModal");
+const fecharLogin = document.querySelector("#loginModal .fechar");
+const formLogin = document.getElementById("formLogin");
+
+if (userIcon && loginModal) {
 
     userIcon.addEventListener("click", () => {
-        modal.classList.add("active");
+        loginModal.classList.add("active");
     });
+}
 
-    fechar.addEventListener("click", () => {
-        modal.classList.remove("active");
+if (fecharLogin && loginModal && formLogin) {
+    fecharLogin.addEventListener("click", () => {
+        loginModal.classList.remove("active");
+        formLogin.reset();
     });
-
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("active");
-        }
-    });
-
-    form.addEventListener("submit", function(e) {
+}
+window.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+        loginModal.classList.remove("active");
+        formLogin.reset();
+    }
+});
+if (formLogin) {
+    formLogin.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        const usuario = form.usuario.value;
-        const senha = form.senha.value;
+        const usuario = formLogin.usuario.value;
+        const senha = formLogin.senha.value;
 
         if (usuario === "admin" && senha === "123") {
             alert("Login realizado!");
-            modal.classList.remove("active");
+            loginModal.classList.remove("active");
         } else {
             alert("Usuário ou senha inválidos");
         }
-});
+    });
+}
+const abrirCadastro = document.getElementById("abrirCadastro");
+const cadastroModal = document.getElementById("cadastroModal");
+const fecharCadastro = document.querySelector("#cadastroModal .fechar");
+const formCadastro = document.getElementById("formCadastro");
+
+if (abrirCadastro && cadastroModal && loginModal) {
+    abrirCadastro.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        console.log("abrindo cadastro"); // debug
+
+        loginModal.classList.remove("active");
+        cadastroModal.classList.add("active");
+    });
+}
+if (fecharCadastro && cadastroModal && formCadastro) {
+    fecharCadastro.addEventListener("click", () => {
+        cadastroModal.classList.remove("active");
+        formCadastro.reset();
+    });
+}
+window.addEventListener("click", (e) => {
+    if (e.target === cadastroModal) {
+        cadastroModal.classList.remove("active");
+        formCadastro.reset();
+    }
 });
 
+if (formCadastro) {
+    formCadastro.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const senha = formCadastro.senha.value;
+        const confirmar = formCadastro.confirmarSenha.value;
+
+        if (senha !== confirmar) {
+            alert("As senhas não coincidem!");
+            return;
+        }
+
+        console.log("Cadastro enviado!");
+
+        cadastroModal.classList.remove("active");
+    });
+}

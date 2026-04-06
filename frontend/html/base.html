@@ -58,31 +58,47 @@
     </main>
     <footer class="pe">
         <div class="redes">
-            <a href="https://wa.me/5511917700666" target="_blank" class="whatsapp icone">
+            <a href="https://wa.me/" target="_blank" class="whatsapp icone">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="https://instagram.com/marcosantonio" target="_blank" class="instagram icone">
+            <a href="https://instagram.com/" target="_blank" class="instagram icone">
                 <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.tiktok.com/@edilson_famozin" target="_blank" class="tiktok icone">
+            <a href="https://www.tiktok.com/" target="_blank" class="tiktok icone">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
-            <a href="https://twitter.com/futebol_info" target="_blank" class="twitter icone">
+            <a href="https://twitter.com/" target="_blank" class="twitter icone">
                 <i class="fa-brands fa-twitter"></i>
             </a>
-            <a href="https://www.youtube.com/@DeSolaOficial" target="_blank" class="youtube icone">
+            <a href="https://www.youtube.com/" target="_blank" class="youtube icone">
                 <i class="fa-brands fa-youtube"></i>
             </a>
         </div>
     </footer>
     <div class="modal" id="loginModal">
-        <div class="telaLogin">
+        <div class="modal-content">
             <span class="fechar">&times;</span>
             <h2>Login</h2>
             <form id="formLogin">
                 <input type="email" name="Email" placeholder="Email" required>
-                <input type="password" name="Senha" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
+                <input type="password" name="Senha" placeholder="Senha" required class="inputSenha">
+                <button type="submit" class="btnSubmit">Entrar</button>
+            </form>
+            <p>
+                Não tem uma conta?
+            </p>
+            <a href="#" id="abrirCadastro">Cadastre-se</a>
+        </div>
+    </div>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro">
+                <input type="email" name="email" placeholder="Email" required class="inputEmail">
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" required class="inputSenha">
+                <button type="submit" class="btnSubmit">Cadastrar</button>
             </form>
         </div>
     </div>
