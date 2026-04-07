@@ -171,7 +171,7 @@ function updateCarousel() {
     const cardWidth = cards[0].offsetWidth + 20;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
     const bg = cards[index].getAttribute('data-bg');
-    document.body.style.backgroundImage = `url(${bg})`;
+    document.querySelector('main').style.backgroundImage = `url(${bg})`;
 }
 updateCarousel();
 document.querySelector('.next').addEventListener('click', () => {
