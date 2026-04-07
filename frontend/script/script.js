@@ -161,3 +161,24 @@ if (formCadastro) {
         cadastroModal.classList.remove("active");
     });
 }
+
+const track = document.querySelector('.carrossel2');
+const cards = document.querySelectorAll('.card');
+
+let index = 0;
+
+function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+    const bg = cards[index].getAttribute('data-bg');
+    document.body.style.backgroundImage = `url(${bg})`;
+}
+updateCarousel();
+document.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % cards.length;
+    updateCarousel();
+});
+document.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + cards.length) % cards.length;
+    updateCarousel();
+});
