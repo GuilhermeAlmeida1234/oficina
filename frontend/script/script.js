@@ -135,12 +135,14 @@ if (fecharCadastro && cadastroModal && formCadastro) {
     fecharCadastro.addEventListener("click", () => {
         cadastroModal.classList.remove("active");
         formCadastro.reset();
+        formLogin.reset();
     });
 }
 window.addEventListener("click", (e) => {
     if (e.target === cadastroModal) {
         cadastroModal.classList.remove("active");
         formCadastro.reset();
+        formLogin.reset();
     }
 });
 
