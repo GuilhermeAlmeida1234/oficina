@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
-    <link rel="icone" href="../Imagens/black.png">
+    <link rel="icon" href="../Imagens/black.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../css/styleBase.css">
 </head>
@@ -26,17 +26,27 @@
     <main>
         <section class="conteudo">
             <h1>Contato</h1>
-            <form>
-                <label>Nome:</label><br>
-                <input type="text"><br><br>
+            <form id="formEmail">
+                <label for="nome">Nome:</label><br>
+                <input type="text" name="nome" id="nome"><br><br>
 
-                <label>Email:</label><br>
-                <input type="email"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email"><br><br>
 
-                <label>Mensagem:</label><br>
-                <textarea rows="5"></textarea><br><br>
+                <label for="contato" class="inline">Tipo de Contato</label><br>
+                <select name="contato" id="contato">
+                    <option value="">Selecione</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="elogio">Elogio</option>
+                    <option value="outros">Outros</option>
+                </select><br><br>
 
-                <button type="submit" class="Botão">Enviar</button>
+                <label for="texto">Mensagem:</label><br>
+                <textarea rows="5" id="texto" name="texto"></textarea><br><br>
+
+                <button type="submit" class="Botão" id="btnSubmit">Enviar</button>
             </form>
         </section>
     </main>
@@ -87,7 +97,84 @@
             </form>
         </div>
     </div>
+    <script>
+        const nomeInput = document.getElementById('nome');
+        const emailInput = document.getElementById('email');
+        const contatoSelect = document.getElementById('contato');
+        const txtMensagem = document.getElementById('texto');
+        const btnSubmit = document.getElementById('btnSubmit');
+        const form = document.getElementById('formEmail');
+
+        function validarEmail(email){
+            const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return padrao.test(email);
+        }
+        function validarCampos(){
+            const nome = nomeInput.value.trim();
+            const email = emailInput.value.trim();
+            const contato = contatoSelect.value;
+            const mensagem = txtMensagem.value.trim();
+
+            if(nome === '' || email === '' || mensagem === ''){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, preencha todos os campos.",
+                    icon: "error",
+                    button: "OK",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                })
+                return false;
+            }
+            if(contato === ''){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, preencha todos os campos.",
+                    icon: "error",
+                    button: "OK",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                })
+                return false;
+            }
+            if(contato === "Sugestão"){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, escolha o motivo do contato.",
+                    icon: "error",
+                    button: "OK",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                })
+                return false;
+            }
+            if(!validarEmail(email)){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, digite um email válido.",
+                    icon: "error",
+                    button: "OK",
+                    closeOnClickOutside: false,
+                    closeOnEsc: false,
+                })
+                return false;
+            }
+            return true;
+        }
+            document.getElementById("formEmail").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            if(!validarCampos() || !validarEmail(emailInput.value)){
+                return;
+            }
+            form.reset();
+        });
+    </script>
+
+    <script src="../script/carrossel.js" defer></script>
+    <script src="../script/validacao.js"></script>
     <script src="../script/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 </html>
