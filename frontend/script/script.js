@@ -3,28 +3,21 @@ const next = document.querySelector(".next");
 const prev = document.querySelector(".prev");
 
 if (carrossel && next && prev) {
-
     let slides = document.querySelectorAll(".slide");
-
     slides.forEach(slide => {
         const clone = slide.cloneNode(true);
         carrossel.appendChild(clone);
     });
-
     slides = document.querySelectorAll(".slide");
-
     let index = 0;
     let intervalo;
-
     function larguraSlide() {
         return slides[0].offsetWidth + 20;
     }
-
     function mover() {
         carrossel.style.transition = "transform 0.5s ease";
         carrossel.style.transform = `translateX(-${index * larguraSlide()}px)`;
     }
-
     next.addEventListener("click", () => {
         index++;
         mover();
@@ -37,7 +30,6 @@ if (carrossel && next && prev) {
             }, 500);
         }
     });
-
     prev.addEventListener("click", () => {
         if (index <= 0) {
             carrossel.style.transition = "none";
@@ -50,22 +42,18 @@ if (carrossel && next && prev) {
             mover();
         }, 10);
     });
-
     function iniciarAutoPlay() {
         clearInterval(intervalo);
         intervalo = setInterval(() => {
             next.click();
         }, 3000);
     }
-
     function pararAutoPlay() {
         clearInterval(intervalo);
     }
-
     if (window.innerWidth <= 768) {
         iniciarAutoPlay();
     }
-
     carrossel.addEventListener("touchstart", pararAutoPlay);
     carrossel.addEventListener("touchend", () => {
         if (window.innerWidth <= 768) iniciarAutoPlay();
@@ -76,7 +64,6 @@ if (carrossel && next && prev) {
         if (window.innerWidth <= 768) iniciarAutoPlay();
     });
 }
-
 const userIcon = document.getElementById("userIcon");
 const loginModal = document.getElementById("loginModal");
 const fecharLogin = document.querySelector("#loginModal .fechar");
@@ -102,7 +89,7 @@ window.addEventListener("click", (e) => {
     }
 });
 if (formLogin) {
-    formLogin.addEventListener("submit", function(e) {
+    formLogin.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const usuario = formLogin.usuario.value;
@@ -145,7 +132,6 @@ window.addEventListener("click", (e) => {
         formLogin.reset();
     }
 });
-
 if (formCadastro) {
     formCadastro.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -163,12 +149,9 @@ if (formCadastro) {
         cadastroModal.classList.remove("active");
     });
 }
-
 const track = document.querySelector('.carrossel2');
 const cards = document.querySelectorAll('.card');
-
 let index = 0;
-
 function updateCarousel() {
     const cardWidth = cards[0].offsetWidth + 20;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
