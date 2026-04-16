@@ -5,6 +5,20 @@ const EmailCadastro = document.getElementById("EmailCadastro");
 const SenhaCadastro = document.getElementById("SenhaCadastro");
 const ConfirmarSenhaCadastro = document.getElementById("ConfirmarSenhaCadastro");
 
+function validarEmail(input){
+    const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const email = input.value.trim();
+
+    if (!padrao.test(email)){
+        swal({
+            title: "Erro!",
+            text: "Por favor, insira um email válido.",
+            icon: "error"
+        });
+        return false;
+    }
+    return true;
+}
 function validarSenha(input) {
     if (!input || !input.value) return false;
 
@@ -68,17 +82,29 @@ function validarCadastro() {
 document.getElementById("formLogin").addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (!validarEmail(emailInput)) return;
     if (!validarLogin()) return;
     if (!validarSenha(senhaInput)) return;
 
-    console.log("Login válido");
+    swal({
+            title: "Sucesso!",
+            text: "Login realizado com sucesso!",
+            icon: "success"
+        });
+    loginModal.classList.remove("active");
 });
 
 document.getElementById("formCadastro").addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (!validarEmail(EmailCadastro)) return;
     if (!validarCadastro()) return;
     if (!validarSenha(SenhaCadastro)) return;
 
-    console.log("Cadastro válido");
+    swal({
+            title: "Sucesso!",
+            text: "Cadastro realizado com sucesso!",
+            icon: "success"
+        });
+    cadastroModal.classList.remove("active");
 });
