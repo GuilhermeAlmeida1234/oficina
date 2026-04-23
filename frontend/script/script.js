@@ -1,14 +1,18 @@
 const userIcon = document.getElementById("userIcon");
 const loginModal = document.getElementById("loginModal");
 const cadastroModal = document.getElementById("cadastroModal");
+const agendamentoModal = document.getElementById("agendamentoModal")
 
 const fecharLogin = document.querySelector("#loginModal .fechar");
 const fecharCadastro = document.querySelector("#cadastroModal .fechar");
+const fecharAgendamento = document.querySelector("#agendamentoModal .fechar");
 
 const abrirCadastro = document.getElementById("abrirCadastro");
 
 const formLogin = document.getElementById("formLogin");
 const formCadastro = document.getElementById("formCadastro");
+const formAgendamento = document.getElementById("formAgendamento")
+
 
 if (userIcon && loginModal) {
     userIcon.addEventListener("click", () => {
@@ -39,6 +43,14 @@ if (fecharCadastro && cadastroModal && formCadastro) {
     });
 }
 
+if (fecharAgendamento && agendamentoModal){
+
+    fecharAgendamento.addEventListener("click", () => {
+        agendamentoModal.classList.remove("active");
+        formAgendamento.reset();
+    })
+}
+
 window.addEventListener("click", (e) => {
     if (e.target === loginModal) {
         loginModal.classList.remove("active");
@@ -49,6 +61,11 @@ window.addEventListener("click", (e) => {
         cadastroModal.classList.remove("active");
         formCadastro.reset();
         formLogin.reset();
+    }
+
+    if (e.target === agendamentoModal){
+        agendamentoModal.classList.remove("active");
+        formAgendamento.reset();
     }
 });
 

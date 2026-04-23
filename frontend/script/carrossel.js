@@ -97,3 +97,20 @@ if (track && cards.length > 0) {
         });
     }
 }
+
+const slidesClick = document.querySelectorAll('.slide');
+const modalAgendamento = document.getElementById("agendamentoModal");
+
+slidesClick.forEach(slide => {
+    slide.addEventListener("click", () => {
+
+        modalAgendamento.classList.add("active");
+
+        const servico = slide.getAttribute("data-servico");
+        const select = document.getElementById("servicoAgendamento");
+
+        if (select) {
+            select.value = servico;
+        };
+    });
+});

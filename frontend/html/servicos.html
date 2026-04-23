@@ -41,70 +41,70 @@
             <button class="btn prev">&#10094;</button>
 
             <div class="carrossel">
-                <div class="slide">
+                <div class="slide" data-servico="diagnostico">
                     <img src="../Imagens/diagnostico.jpg" alt="Diagnóstico Completo">
                     <div class="overlay">
                         <h2>Diagnóstico Completo</h2>
                         <p>Identifiação precisa de problemas mecânicos.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="oleo">
                     <img src="../Imagens/oleo.jpg" alt="Troca de Óleo">
                     <div class="overlay">
                         <h2>Troca de Óleo</h2>
                         <p>Manutenção preventiva para garantir o desempenho do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="motor">
                     <img src="../Imagens/motor.jpg" alt="Manutenção de Motor">
                     <div class="overlay">
                         <h2>Manutenção de Motor</h2>
                         <p>Serviços especializados para manutenção e reparo de motores.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="bateria">
                     <img src="../Imagens/bateria.jpg" alt="Troca de Bateria">
                     <div class="overlay">
                         <h2>Troca de Bateria</h2>
                         <p>Substituição de baterias para garantir o funcionamento adequado do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="freios">
                     <img src="../Imagens/freio.jpg" alt="Reparo de Freios">
                     <div class="overlay">
                         <h2>Reparo de Freios</h2>
                         <p>Serviços de manutenção e reparo para garantir a segurança do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="suspensao">
                     <img src="../Imagens/suspensao.jpg" alt="Reparo de Suspensão">
                     <div class="overlay">
                         <h2>Reparo de Suspensão</h2>
                         <p>Serviços de manutenção e reparo para garantir o conforto e segurança do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="ar-condicionado">
                     <img src="../Imagens/ar.jpg" alt="Reparo de Ar-condicionado">
                     <div class="overlay">
                         <h2>Reparo de Ar-condicionado</h2>
                         <p>Serviços de manutenção e reparo para garantir o conforto do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="eletrica">
                     <img src="../Imagens/eletrico.jpg" alt="Manutenção Elétrica">
                     <div class="overlay">
                         <h2>Manutenção Elétrica</h2>
                         <p>Serviços especializados para manutenção e reparo do sistema elétrico do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
-                    <img src="../Imagens/alinhamento.jpg" alt="alinhamento e balanceamento">
+                <div class="slide" data-servico="alinhamento">
+                    <img src="../Imagens/alinhamento.jpg" alt="Alinhamento e Balanceamento">
                     <div class="overlay">
                         <h2>Alinhamento e Balanceamento</h2>
                         <p>Serviços especializados para garantir o desempenho e segurança do seu veículo.</p>
                     </div>
                 </div>
-                <div class="slide">
+                <div class="slide" data-servico="revisao">
                     <img src="../Imagens/revisao.jpg" alt="Revisão Completa">
                     <div class="overlay">
                         <h2>Revisão Completa</h2>
@@ -161,11 +161,96 @@
             </form>
         </div>
     </div>
+    <div class="modal" id="agendamentoModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Agendamento</h2>
+            <form id="formAgendamento" novalidate>
+                <input type="text" name="nome" id="nomeAgendamento" placeholder="Nome" required>
+                <input type="text" name="numero" id="numeroAgendamento" placeholder="Número de Telefone" required>
+                <select name="servico" id="servicoAgendamento" required>
+                    <option value="">Selecione um Serviço</option>
+                    <option value="diagnostico">Diagnóstico Completo</option>
+                    <option value="oleo">Troca de Óleo</option>
+                    <option value="motor">Manutenção de Motor</option>
+                    <option value="bateria">Troca de Bateria</option>
+                    <option value="freios">Reparo de Freios</option>
+                    <option value="suspensao">Reparo de Suspensão</option>
+                    <option value="ar-condicionado">Reparo de Ar-condicionado</option>
+                    <option value="eletrica">Manutenção Elétrica</option>
+                    <option value="alinhamento">Alinhamento e Balanceamento</option>
+                    <option value="revisao">Revisão Completa</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <input type="text" name="data" id="dataAgendamento" placeholder="Data do Agendamento" required>
 
+                <button type="submit" class="btnSubmit" id="btnPrev">Agendar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/inputmask@5.0.8/dist/inputmask.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
     <script src="../script/script.js" defer></script>
     <script src="../script/validacao.js" defer></script>
     <script src="../script/carrossel.js" defer></script>
+    <script>
 
+        const nome = document.getElementById("nomeAgendamento");
+        const numero = document.getElementById("numeroAgendamento");
+        const servico = document.getElementById("servicoAgendamento");
+        const btn = document.getElementById("btnPrev");
+        const form = document.getElementById("formAgendamento")
+
+        Inputmask({
+                mask: "(99) 99999-9999"
+            }).mask(numero)
+
+        function validarCampos(){
+            const nomeValue = nome.value.trim();
+            const numeroValue = numero.value.trim();
+            const servicoValue = servico.value;
+            
+            if(nomeValue === "" || numeroValue === "" || servicoValue === ""){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, preencha todos os campos.",
+                    icon: "error",
+                    button: "OK",
+                });
+                return false;
+            }
+            return true;
+        }
+        function validarNumero(numero){
+            const padrao = /^\(\d{2}\) \d{5}-\d{4}$/;
+            if (!padrao.test(numero)){
+                swal({
+                    title: "Erro!",
+                    text: "Por favor, digite um número de telefone válido.",
+                    icon: "error",
+                    button: "OK",
+                })
+                return false;
+            }
+            return true;
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log("funcionou");
+
+            if (!validarCampos()) return;
+            if (!validarNumero(numero.value)) return;
+
+            swal({
+                title: "Agendamento Realizado!",
+                text: "Seu agendamento foi realizado com sucesso.",
+                icon: "success",
+                button: "OK"
+            });
+            form.reset();
+        });
+    </script>
 </body>
 </html>
