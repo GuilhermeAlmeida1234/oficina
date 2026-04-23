@@ -25,8 +25,8 @@ button{
 button:hover{
     filter: drop-shadow(0 0 10px rgb(216, 83, 6));
 }
-.home{
-    content: "";
+.home::before{
+    content: '';
     position: fixed;
     inset: 0;
     background:
@@ -34,8 +34,8 @@ button:hover{
         url("../Imagens/carro3.jpg") center/cover no-repeat;
     z-index: -1;
 }
-.servicos{
-    content: "";
+.servicos::before{
+    content: '';
     position: fixed;
     inset: 0;
     background:
@@ -45,8 +45,8 @@ button:hover{
     background-size: 40px 40px;
     z-index: -1;
 }
-.contato{
-    content: "";
+.contato::before{
+    content: '';
     position: fixed;
     inset: 0;
     background:
@@ -54,8 +54,8 @@ button:hover{
         linear-gradient(180deg, #000, #111);
     z-index: -1;
 }
-.sobre{
-    content: "";
+.sobre::before{
+    content: '';
     position: fixed;
     inset: 0;
     background:
@@ -74,7 +74,6 @@ main{
     justify-content: space-between;
 }
 #bg{
-    position: fixed;
     inset: 0;
     background-position: center;
     background-repeat: no-repeat;
@@ -522,6 +521,16 @@ select {
     .slide{
         min-width: 80%;
         height: 250px;
+    }
+    .prev,
+    .next{
+        display: none;
+    }
+    .overlay{
+        opacity: 1;
+    }
+    .slide img{
+        transform: scale(1.05);
     }
 }
 

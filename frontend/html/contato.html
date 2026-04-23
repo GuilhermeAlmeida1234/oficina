@@ -18,23 +18,32 @@
                 <li class="nav" id="sobre"><a href="sobre.html">Sobre Nós</a></li>
                 <li class="nav" id="contato"><a href="contato.html">Contato</a></li>
             </ul>
-            <div class="usuario">
+            <button class="usuario">
                 <i class="fa-solid fa-user" id="userIcon"></i>
-            </div>
+            </button>
         </nav>
+            <button class="menu-toggle">☰</button>
+            <nav class="menu">
+                <ul>
+                    <li><a href="base.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
     </header>
     <main>
         <section class="conteudo">
             <h1>Contato</h1>
             <form id="formEmail">
                 <label for="nome">Nome:</label><br>
-                <input type="text" name="nome" id="nome"><br><br>
+                <input type="text" name="nome" id="nome" required><br><br>
 
                 <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email"><br><br>
+                <input type="email" name="email" id="email" required><br><br>
 
                 <label for="contato" class="inline">Tipo de Contato</label><br>
-                <select name="contato" id="contato">
+                <select name="contato" id="contato" required>
                     <option value="">Selecione</option>
                     <option value="sugestao">Sugestão</option>
                     <option value="reclamacao">Reclamação</option>
@@ -44,7 +53,7 @@
                 </select><br><br>
 
                 <label for="texto">Mensagem:</label><br>
-                <textarea rows="5" id="texto" name="texto"></textarea><br><br>
+                <textarea rows="5" id="texto" name="texto" required></textarea><br><br>
 
                 <button type="submit" class="Botão" id="btnSubmit">Enviar</button>
             </form>
@@ -68,7 +77,6 @@
                     <i class="fa-brands fa-youtube"></i>
                 </a>
             </div>
-        </footer>
     </footer>
     <div class="modal" id="loginModal">
         <div class="modal-content">
@@ -97,6 +105,12 @@
             </form>
         </div>
     </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+    <script src="../script/carrossel.js" defer></script>
+    <script src="../script/validacao.js" defer></script>
+    <script src="../script/script.js" defer></script>
+
     <script>
         const nomeInput = document.getElementById('nome');
         const emailInput = document.getElementById('email');
@@ -137,7 +151,7 @@
                 })
                 return false;
             }
-            if(contato === "Sugestão"){
+            if(contato === "sugestao"){
                 swal({
                     title: "Erro!",
                     text: "Por favor, escolha o motivo do contato.",
@@ -171,10 +185,6 @@
         });
     </script>
 
-    <script src="../script/carrossel.js"></script>
-    <script src="../script/validacao.js"></script>
-    <script src="../script/script.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    
 </body>
 </html>

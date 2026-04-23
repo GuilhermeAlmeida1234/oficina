@@ -65,7 +65,6 @@ if (carrossel && nextBtn && prevBtn) {
     carrossel.addEventListener("mouseleave", iniciarAutoPlay);
 }
 
-// CARROSSEL 2
 const track = document.querySelector('.carrossel2');
 const cards = document.querySelectorAll('.card');
 let index2 = 0;
