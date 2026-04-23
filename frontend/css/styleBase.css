@@ -25,7 +25,7 @@ button{
 button:hover{
     filter: drop-shadow(0 0 10px rgb(216, 83, 6));
 }
-.home::before{
+.home{
     content: "";
     position: fixed;
     inset: 0;
@@ -34,7 +34,7 @@ button:hover{
         url("../Imagens/carro3.jpg") center/cover no-repeat;
     z-index: -1;
 }
-.servicos::before{
+.servicos{
     content: "";
     position: fixed;
     inset: 0;
@@ -45,7 +45,7 @@ button:hover{
     background-size: 40px 40px;
     z-index: -1;
 }
-.contato::before{
+.contato{
     content: "";
     position: fixed;
     inset: 0;
@@ -54,7 +54,7 @@ button:hover{
         linear-gradient(180deg, #000, #111);
     z-index: -1;
 }
-.sobre::before{
+.sobre{
     content: "";
     position: fixed;
     inset: 0;
@@ -62,7 +62,6 @@ button:hover{
         radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 50%),
         radial-gradient(circle at 70% 70%, rgba(255,255,255,0.10), transparent 50%),
         linear-gradient(180deg, #0d0d0d, #000);
-        
     z-index: -1;
 }
 main{
@@ -86,7 +85,7 @@ main{
 .cabecalho{
     position: relative;
     top: 0;
-    z-index: 1000   ;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,11 +122,13 @@ main{
     text-decoration: underline;
 }
 .usuario{
+    background: none;
+    border: none;
     margin-left: 20px;
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
-    margin-left: 50px;
+    margin-left: 60px;
     transition: 0.3s;
 }
 .usuario:hover{
@@ -228,6 +229,7 @@ select {
     font-size: 18px;
     transition: 0.3s;
     text-decoration: none;
+    z-index: 110;
 }
 .redes a:hover {
     transform: scale(1.5);
