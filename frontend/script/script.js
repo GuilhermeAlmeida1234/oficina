@@ -99,7 +99,7 @@ function animarLinks() {
 }
 
 toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
+    menu.classList.add("active");
 
     if (menu.classList.contains("active")) {
         animarLinks();

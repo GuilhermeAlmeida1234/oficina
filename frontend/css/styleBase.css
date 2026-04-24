@@ -472,7 +472,7 @@ select {
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
-        z-index: 2000;
+        z-index: 20000;
     }
     .menu ul{
         display: flex;
@@ -510,6 +510,10 @@ select {
     .menu.active{
         opacity: 1;
         pointer-events: auto;
+        min-height: 100vh;
+        min-width: 100vw;
+        background: black;
+        color: white;
     }
     .cabecalho {
         flex-direction: column;
