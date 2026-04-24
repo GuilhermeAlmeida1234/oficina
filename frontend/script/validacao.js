@@ -1,4 +1,4 @@
-const emailInput = document.getElementById("EmailLogin");
+const emailInput2 = document.getElementById("EmailLogin");
 const senhaInput = document.getElementById("SenhaLogin");
 
 const EmailCadastro = document.getElementById("EmailCadastro");
@@ -10,6 +10,7 @@ function validarEmail(input){
     const email = input.value.trim();
 
     if (!padrao.test(email)){
+        console.log("Erro1")
         swal({
             title: "Erro!",
             text: "Por favor, insira um email válido.",
@@ -26,6 +27,7 @@ function validarSenha(input) {
     const senha = input.value.trim();
 
     if (!padrao.test(senha)) {
+        console.log("Erro2")
         swal({
             title: "Erro!",
             text: "A senha deve ter pelo menos 8 caracteres, com letra, número e símbolo.",
@@ -37,11 +39,12 @@ function validarSenha(input) {
     return true;
 }
 
-function validarLogin() {
-    const email = emailInput.value.trim();
+function validarCampos() {
+    const email = emailInput2.value.trim();
     const senha = senhaInput.value.trim();
 
     if (email === '' || senha === '') {
+        console.log("Erro3")
         swal({
             title: "Erro!",
             text: "Preencha todos os campos.",
@@ -59,6 +62,7 @@ function validarCadastro() {
     const confirmar = ConfirmarSenhaCadastro.value.trim();
 
     if (email === '' || senha === '' || confirmar === '') {
+        console.log("Erro4")
         swal({
             title: "Erro!",
             text: "Preencha todos os campos.",
@@ -68,6 +72,7 @@ function validarCadastro() {
     }
 
     if (senha !== confirmar) {
+        console.log("Erro5")
         swal({
             title: "Erro!",
             text: "As senhas não coincidem.",
@@ -82,8 +87,8 @@ function validarCadastro() {
 document.getElementById("formLogin").addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (!validarEmail(emailInput)) return;
-    if (!validarLogin()) return;
+    if (!validarCampos()) return;
+    if (!validarEmail(emailInput2)) return;
     if (!validarSenha(senhaInput)) return;
 
     swal({
@@ -97,8 +102,8 @@ document.getElementById("formLogin").addEventListener("submit", (e) => {
 document.getElementById("formCadastro").addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (!validarCadastro()) return;    
     if (!validarEmail(EmailCadastro)) return;
-    if (!validarCadastro()) return;
     if (!validarSenha(SenhaCadastro)) return;
 
     swal({

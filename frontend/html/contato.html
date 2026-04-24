@@ -40,7 +40,7 @@
                 <input type="text" name="nome" id="nome" required><br><br>
 
                 <label for="email">Email:</label><br>
-                <input type="email" name="email" id="email" required><br><br>
+                <input type="text" name="email" id="email" required><br><br>
 
                 <label for="contato" class="inline">Tipo de Contato</label><br>
                 <select name="contato" id="contato" required>
@@ -82,10 +82,10 @@
         <div class="modal-content">
             <span class="fechar">&times;</span>
             <h2>Login</h2>
-            <form id="formLogin">
-                <input type="email" name="Email" placeholder="Email" required>
-                <input type="password" name="Senha" placeholder="Senha" required class="inputSenha">
-                <button type="submit" class="btnSubmit">Entrar</button>
+            <form id="formLogin" novalidate>
+                <input type="text" name="Email" placeholder="Email" id="EmailLogin" required autocomplete="email">
+                <input type="password" name="Senha" placeholder="Senha" class="inputSenha" id="SenhaLogin" required>
+                <button type="submit" class="btnSubmit" id="btnSubmitLogin">Entrar</button>
             </form>
             <p>
                 Não tem uma conta?
@@ -98,20 +98,20 @@
             <span class="fechar">&times;</span>
             <h2>Cadastro</h2>
             <form id="formCadastro" novalidate>
-                <input type="email" name="email" placeholder="Email" required class="inputEmail">
-                <input type="password" name="senha" placeholder="Senha" required>
-                <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" required class="inputSenha">
-                <button type="submit" class="btnSubmit">Cadastrar</button>
+                <input type="text" name="email" placeholder="Email" required class="inputEmail" id="EmailCadastro" autocomplete="email">
+                <input type="password" name="senha" placeholder="Senha" required id="SenhaCadastro">
+                <input type="password" name="confirmarSenha" required placeholder="Confirmar Senha" class="inputSenha" id="ConfirmarSenhaCadastro">
+                <button type="submit" class="btnSubmit" id="btnSubmitCadastro">Cadastrar</button>
             </form>
         </div>
     </div>
 
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../script/carrossel.js"></script>
-    <script src="../script/validacao.js"></script>
-    <script src="../script/script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+    <script src="../script/carrossel.js" defer></script>
+    <script src="../script/validacao.js" defer></script>
+    <script src="../script/script.js" defer></script>
 
-    <script>
+    <script defer>
         const nomeInput = document.getElementById('nome');
         const emailInput = document.getElementById('email');
         const contatoSelect = document.getElementById('contato');

@@ -138,10 +138,10 @@
         <div class="modal-content">
             <span class="fechar">&times;</span>
             <h2>Login</h2>
-            <form id="formLogin">
-                <input type="email" name="Email" placeholder="Email" required>
-                <input type="password" name="Senha" placeholder="Senha" required class="inputSenha">
-                <button type="submit" class="btnSubmit">Entrar</button>
+            <form id="formLogin" novalidate>
+                <input type="text" name="Email" placeholder="Email" id="EmailLogin" required autocomplete="email">
+                <input type="password" name="Senha" placeholder="Senha" class="inputSenha" id="SenhaLogin" required>
+                <button type="submit" class="btnSubmit" id="btnSubmitLogin">Entrar</button>
             </form>
             <p>
                 Não tem uma conta?
@@ -153,11 +153,11 @@
         <div class="modal-content">
             <span class="fechar">&times;</span>
             <h2>Cadastro</h2>
-            <form id="formCadastro">
-                <input type="email" name="email" placeholder="Email" required class="inputEmail">
-                <input type="password" name="senha" placeholder="Senha" required>
-                <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" required class="inputSenha">
-                <button type="submit" class="btnSubmit">Cadastrar</button>
+            <form id="formCadastro" novalidate>
+                <input type="text" name="email" placeholder="Email" required class="inputEmail" id="EmailCadastro" autocomplete="email">
+                <input type="password" name="senha" placeholder="Senha" required id="SenhaCadastro">
+                <input type="password" name="confirmarSenha" required placeholder="Confirmar Senha" class="inputSenha" id="ConfirmarSenhaCadastro">
+                <button type="submit" class="btnSubmit" id="btnSubmitCadastro">Cadastrar</button>
             </form>
         </div>
     </div>
@@ -182,9 +182,10 @@
                     <option value="revisao">Revisão Completa</option>
                     <option value="outros">Outros</option>
                 </select>
-                <input type="text" name="data" id="dataAgendamento" placeholder="Data do Agendamento" required>
 
-                <button type="submit" class="btnSubmit" id="btnPrev">Agendar</button>
+                <input type="date" name="data" id="dataAgendamento" placeholder="Data do Agendamento" class="calendario">
+
+                <button type="submit" class="btnSubmit btnAgendamento" id="btnPrev">Agendar</button>
             </form>
         </div>
     </div>
