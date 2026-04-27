@@ -13,7 +13,8 @@ function validarEmail(input){
         swal({
             title: "Erro!",
             text: "Por favor, insira um email válido.",
-            icon: "error"
+            icon: "error",
+            button: "OK"
         });
         return false;
     }
@@ -29,7 +30,8 @@ function validarSenha(input) {
         swal({
             title: "Erro!",
             text: "A senha deve ter pelo menos 8 caracteres, com letra, número e símbolo.",
-            icon: "error"
+            icon: "error",
+            button: "OK"
         });
         return false;
     }
@@ -45,7 +47,8 @@ function validarCampos() {
         swal({
             title: "Erro!",
             text: "Preencha todos os campos.",
-            icon: "error"
+            icon: "error",
+            button: "OK"
         });
         return false;
     }
@@ -62,7 +65,8 @@ function validarCadastro() {
         swal({
             title: "Erro!",
             text: "Preencha todos os campos.",
-            icon: "error"
+            icon: "error",
+            button: "OK"
         });
         return false;
     }
@@ -71,7 +75,8 @@ function validarCadastro() {
         swal({
             title: "Erro!",
             text: "As senhas não coincidem.",
-            icon: "error"
+            icon: "error",
+            button: "OK"
         });
         return false;
     }
@@ -89,8 +94,10 @@ document.getElementById("formLogin").addEventListener("submit", (e) => {
     swal({
             title: "Sucesso!",
             text: "Login realizado com sucesso!",
-            icon: "success"
+            icon: "success",
+            button: "OK"
         });
+        
     document.querySelector(".swal-button").addEventListener("click", (e) => {
         loginModal.classList.remove("active");
         formLogin.reset();
@@ -107,7 +114,8 @@ document.getElementById("formCadastro").addEventListener("submit", (e) => {
     swal({
             title: "Sucesso!",
             text: "Cadastro realizado com sucesso!",
-            icon: "success"
+            icon: "success",
+            button: "OK"
         });
 
     document.querySelector(".swal-button").addEventListener("click", (e) => {

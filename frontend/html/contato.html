@@ -35,7 +35,7 @@
     <main>
         <section class="conteudo">
             <h1>Contato</h1>
-            <form id="formEmail">
+            <form id="formEmail" novalidate>
                 <label for="nome">Nome:</label><br>
                 <input type="text" name="nome" id="nome" required><br><br>
 
@@ -44,7 +44,7 @@
 
                 <label for="contato" class="inline">Tipo de Contato</label><br>
                 <select name="contato" id="contato" required>
-                    <option value="">Selecione</option>
+                    <option value="selecione">Selecione</option>
                     <option value="sugestao">Sugestão</option>
                     <option value="reclamacao">Reclamação</option>
                     <option value="duvida">Dúvida</option>
@@ -119,17 +119,18 @@
         const btnSubmit = document.getElementById('btnSubmit');
         const form = document.getElementById('formEmail');
 
-        function validarEmail(email){
+        function validarEmail2(email){
             const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return padrao.test(email);
         }
-        function validarCampos(){
+        function validarCampos2(){
             const nome = nomeInput.value.trim();
             const email = emailInput.value.trim();
             const contato = contatoSelect.value;
             const mensagem = txtMensagem.value.trim();
 
-            if(nome === '' || email === '' || mensagem === '' || contato === ''){
+            if(nome === "" || email === "" || mensagem === "" || contato === ""){
+                console.log("Erro")
                 swal({
                     title: "Erro!",
                     text: "Por favor, preencha todos os campos.",
@@ -140,7 +141,8 @@
                 })
                 return false;
             }
-            if(contato === "sugestao"){
+            if(contato === "selecione"){
+                console.log("erro2")
                 swal({
                     title: "Erro!",
                     text: "Por favor, escolha o motivo do contato.",
@@ -151,7 +153,8 @@
                 })
                 return false;
             }
-            if(!validarEmail(email)){
+            if(!validarEmail2(email)){
+                console.log("erro3")
                 swal({
                     title: "Erro!",
                     text: "Por favor, digite um email válido.",
@@ -167,9 +170,9 @@
             document.getElementById("formEmail").addEventListener("submit", function(event){
             event.preventDefault();
 
-            if(!validarCampos() || !validarEmail(emailInput.value)){
-                return;
-            }
+            if (!validarCampos2()) return;
+            
+            console.log("erro4")
             swal({
                 title: "Sucesso!",
                 text: "Sua mensagem foi enviada com sucesso.",
