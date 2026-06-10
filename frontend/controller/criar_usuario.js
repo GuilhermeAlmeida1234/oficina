@@ -3,48 +3,15 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
     var frmUsuario = document.querySelector("#formCadastro");
     const usuario = obtemUsuarioDoFormulario(frmUsuario);
 
-    console.log("ID selecionado:", idUsuarioSelecionado);
-    console.log("Usuário:", usuario);
-
-    if (idUsuarioSelecionado) {
-
-    fetch(`http://localhost:3000/usuarios/${idUsuarioSelecionado}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(usuario)
-    })
-    .then(response => {
-        console.log("STATUS PUT:", response.status);
-        return response.json();
-    })
-    .then(dados => {
-        console.log(dados);
-
-        frmUsuario.reset();
-        listarUsuarios();
-
-        idUsuarioSelecionado = null;
-    })
-    .catch(erro => {
-        console.error("Erro no PUT:", erro);
-    });
-
-    console.log("Executando PUT");
-    
-    } else {
-
-        if (validarFormularioAluno(frmUsuario) == false) {
+        if (validarFormularioUsuario(frmUsuario) == false) {
         return;
         }
-        var usuario1 = obtemUsuarioDoFormulario(frmUsuario);
         fetch("http://localhost:3000/usuarios", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(usuario1)
+            body: JSON.stringify(usuario)
         })
             .then(response => response.json())
             .then(dados => {
@@ -52,10 +19,7 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
             });
 
         frmUsuario.reset();
-        listarUsuarios();
         console.log("Executando POST");
-
-    }
 });
 
 function obtemUsuarioDoFormulario(frmUsuario) {
@@ -66,20 +30,18 @@ function obtemUsuarioDoFormulario(frmUsuario) {
     };
 }
 
-function validarFormularioAluno(frmUsuario) {
-    var divMensagens = document.querySelector("#divMensagens");
-    divMensagens.textContent = "";
+function validarFormularioUsuario(frmUsuario) {
 
-    if (frmUsuario.nome.value.length == 0) {
+    if (frmUsuario.nome.value.trim() === "") {
         criaMensagem("Nome inválido");
         return false;
     }
-    if (validarNotaTrabalho(frmUsuario.trabalho.value) == false) {
-        criaMensagem("Nota do trabalho inválida.");
+    if (frmUsuario.email.value.trim() === "") {
+        criaMensagem("Email inválido");
         return false;
     }
-    if (validarNotaProva(frmUsuario.prova.value) == false) {
-        criaMensagem("Nota da prova inválida.");
+    if (frmUsuario.senha.value.trim() === "") {
+        criaMensagem("Senha inválida");
         return false;
     }
     return true;
