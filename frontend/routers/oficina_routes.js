@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const alunosController = require("../controller/aluno_controller");
-const validarAluno = require("../validations/aluno_validacao");
+const usuariosController = require("../controller/aluno_controller");
+const validarUsuario = require("../validations/usuario_validation");
 
-router.get("/", alunosController.listar);
-router.post("/", validarAluno, alunosController.salvar);
-router.delete("/:id", alunosController.excluir);
-router.put("/:id", alunosController.atualizar);
+router.post("/", validarUsuario, alunosController.salvar);
 module.exports = router;
