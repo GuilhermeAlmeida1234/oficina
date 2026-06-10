@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="../css/styleBase.css">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
+    <script src="../model/usuarios.js" defer></script>
+    <script src="../controller/buscar_usuarios.js" defer></script>
+    <script src="../controller/criar_usuario.js" defer></script>
     <script src="../view/carrossel.js" defer></script>
     <script src="../view/script.js" defer></script>
-    <script src="../view/validacao.js" defer></script>
     
 </head>
 <body class="home">
@@ -110,6 +112,7 @@
             <span class="fechar">&times;</span>
             <h2>Cadastro</h2>
             <form id="formCadastro" novalidate>
+                <input type="text" name="nome" id="nomeCadastro" required class="inputNome" autocomplete="name">
                 <input type="text" name="email" placeholder="Email" required class="inputEmail" id="EmailCadastro" autocomplete="email">
                 <input type="password" name="senha" placeholder="Senha" required id="SenhaCadastro">
                 <input type="password" name="confirmarSenha" required placeholder="Confirmar Senha" class="inputSenha" id="ConfirmarSenhaCadastro">

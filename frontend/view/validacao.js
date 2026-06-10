@@ -84,42 +84,112 @@ function validarCadastro() {
     return true;
 }
 
-document.getElementById("formLogin").addEventListener("submit", (e) => {
+document.getElementById("formLogin").addEventListener("submit", async (e) => {
+
     e.preventDefault();
 
     if (!validarCampos()) return;
     if (!validarEmail(emailInput2)) return;
-    if (!validarSenha(senhaInput)) return;
 
-    swal({
-            title: "Sucesso!",
-            text: "Login realizado com sucesso!",
-            icon: "success",
-            button: "OK"
-        });
-        
-    document.querySelector(".swal-button").addEventListener("click", (e) => {
-        loginModal.classList.remove("active");
-        formLogin.reset();
-    })
+    const usuario = {
+
+        email: emailInput2.value,
+
+        senha: senhaInput.value
+
+    };
+
+    try {
+
+        const resposta =
+            await fetch(
+                "http://localhost:3000/usuarios/login",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                        "application/json"
+                    },
+                    body: JSON.stringify(usuario)
+                }
+            );
+
+        const resultado =
+            await resposta.json();
+
+        if (resultado.autenticado) {
+
+            swal({
+                title: "Sucesso!",
+                text: "Login realizado!",
+                icon: "success"
+            });
+
+        } else {
+
+            swal({
+                title: "Erro!",
+                text: "Email ou senha inválidos.",
+                icon: "error"
+            });
+
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+
+    }
+
 });
 
-document.getElementById("formCadastro").addEventListener("submit", (e) => {
+document.getElementById("formCadastro").addEventListener("submit", async (e) => {
+
     e.preventDefault();
 
-    if (!validarCadastro()) return;    
+    if (!validarCadastro()) return;
     if (!validarEmail(EmailCadastro)) return;
     if (!validarSenha(SenhaCadastro)) return;
 
-    swal({
+    const usuario = {
+        nome: document
+            .getElementById("NomeCadastro")
+            .value,
+
+        email: EmailCadastro.value,
+
+        senha: SenhaCadastro.value
+    };
+
+    try {
+
+        const resposta = await fetch(
+                "http://localhost:3000/usuarios",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type":
+                        "application/json"
+                    },
+                    body: JSON.stringify(usuario)
+                }
+            );
+
+        const resultado =
+            await resposta.json();
+
+        console.log(resultado);
+
+        swal({
             title: "Sucesso!",
-            text: "Cadastro realizado com sucesso!",
-            icon: "success",
-            button: "OK"
+            text: "Cadastro realizado!",
+            icon: "success"
         });
 
-    document.querySelector(".swal-button").addEventListener("click", (e) => {
-        cadastroModal.classList.remove("active");
-        formCadastro.reset();
-    })
+    } catch (erro) {
+
+        console.error(erro);
+
+    }
+
 });

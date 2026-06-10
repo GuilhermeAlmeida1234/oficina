@@ -23,4 +23,4 @@ function validarUsuario(req, res, next) {
     next();
 }
 
-module.exports = validarAluno;
+module.exports = validarUsuario;

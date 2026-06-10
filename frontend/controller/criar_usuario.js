@@ -1,21 +1,19 @@
-var btnSalvarAluno = document.querySelector("#btnSalvarAluno");
+document.getElementById("formCadastro").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    var frmUsuario = document.querySelector("#formCadastro");
+    const usuario = obtemUsuarioDoFormulario(frmUsuario);
 
-btnSalvarAluno.addEventListener("click", function(event) {
-    event.preventDefault();
-    var frmAluno = document.querySelector("#frmAluno");
-    const aluno = obtemAlunoDoFormulario(frmAluno);
+    console.log("ID selecionado:", idUsuarioSelecionado);
+    console.log("Usuário:", usuario);
 
-    console.log("ID selecionado:", idAlunoSelecionado);
-    console.log("Aluno:", aluno);
+    if (idUsuarioSelecionado) {
 
-    if (idAlunoSelecionado) {
-
-    fetch(`http://localhost:3000/alunos/${idAlunoSelecionado}`, {
+    fetch(`http://localhost:3000/usuarios/${idUsuarioSelecionado}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(aluno)
+        body: JSON.stringify(usuario)
     })
     .then(response => {
         console.log("STATUS PUT:", response.status);
@@ -24,10 +22,10 @@ btnSalvarAluno.addEventListener("click", function(event) {
     .then(dados => {
         console.log(dados);
 
-        frmAluno.reset();
-        listarAlunos();
+        frmUsuario.reset();
+        listarUsuarios();
 
-        idAlunoSelecionado = null;
+        idUsuarioSelecionado = null;
     })
     .catch(erro => {
         console.error("Erro no PUT:", erro);
@@ -37,50 +35,50 @@ btnSalvarAluno.addEventListener("click", function(event) {
     
     } else {
 
-        if (validarFormularioAluno(frmAluno) == false) {
+        if (validarFormularioAluno(frmUsuario) == false) {
         return;
         }
-        var aluno1 = obtemAlunoDoFormulario(frmAluno);
-        fetch("http://localhost:3000/alunos", {
+        var usuario1 = obtemUsuarioDoFormulario(frmUsuario);
+        fetch("http://localhost:3000/usuarios", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(aluno1)
+            body: JSON.stringify(usuario1)
         })
             .then(response => response.json())
             .then(dados => {
-                console.log("Aluno salvo:", dados);
+                console.log("Usuário salvo:", dados);
             });
 
-        frmAluno.reset();
-        listarAlunos();
+        frmUsuario.reset();
+        listarUsuarios();
         console.log("Executando POST");
 
     }
 });
 
-function obtemAlunoDoFormulario(frmAluno) {
+function obtemUsuarioDoFormulario(frmUsuario) {
     return {
-        nome: frmAluno.nome.value,
-        trabalho: parseFloat(frmAluno.trabalho.value),
-        prova: parseFloat(frmAluno.prova.value)
+        nome: frmUsuario.nome.value,
+        email: frmUsuario.email.value,
+        senha: frmUsuario.senha.value
     };
 }
 
-function validarFormularioAluno(frmAluno) {
+function validarFormularioAluno(frmUsuario) {
     var divMensagens = document.querySelector("#divMensagens");
     divMensagens.textContent = "";
 
-    if (frmAluno.nome.value.length == 0) {
+    if (frmUsuario.nome.value.length == 0) {
         criaMensagem("Nome inválido");
         return false;
     }
-    if (validarNotaTrabalho(frmAluno.trabalho.value) == false) {
+    if (validarNotaTrabalho(frmUsuario.trabalho.value) == false) {
         criaMensagem("Nota do trabalho inválida.");
         return false;
     }
-    if (validarNotaProva(frmAluno.prova.value) == false) {
+    if (validarNotaProva(frmUsuario.prova.value) == false) {
         criaMensagem("Nota da prova inválida.");
         return false;
     }
