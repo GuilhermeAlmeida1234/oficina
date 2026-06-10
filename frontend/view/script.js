@@ -77,7 +77,6 @@ function toggleMenu() {
 
 document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
 
-const menu = document.querySelector(".menu");
 const toggle = document.querySelector(".menu-toggle");
 
 window.addEventListener("click", (e) => {

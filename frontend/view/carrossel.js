@@ -63,10 +63,8 @@ if (carrossel && nextBtn && prevBtn) {
 
     carrossel.addEventListener("mouseenter", pararAutoPlay);
     carrossel.addEventListener("mouseleave", iniciarAutoPlay);
-}
-const menu = document.querySelector(".menu");
 
-document.addEventListener("click", function(event){
+    document.addEventListener("click", function (event) {
     if (menu.classList.contains("active")) {
         pararAutoPlay();
     }
@@ -74,7 +72,11 @@ document.addEventListener("click", function(event){
         iniciarAutoPlay();
     }
 })
-    
+
+}
+const menu = document.querySelector(".menu");
+
+
 
 const track = document.querySelector('.carrossel2');
 const cards = document.querySelectorAll('.card');

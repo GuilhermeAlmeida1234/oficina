@@ -121,6 +121,5 @@ document.getElementById("formCadastro").addEventListener("submit", (e) => {
     document.querySelector(".swal-button").addEventListener("click", (e) => {
         cadastroModal.classList.remove("active");
         formCadastro.reset();
-
     })
 });
