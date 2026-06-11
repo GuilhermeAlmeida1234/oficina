@@ -1,0 +1,26 @@
+.carrossel-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+.carrossel{
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+.slide{
+    min-width: 500px;
+    height: 350px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}

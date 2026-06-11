@@ -1,0 +1,106 @@
+@media (min-width: 769px) {
+    .menu {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .menu{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: flex;
+        justify-content: center;    
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        z-index: 20000;
+    }
+    .menu ul{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+    .menu ul li{
+        list-style: none;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .menu a{
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .menu a:hover{
+        color: #ff5c00;
+        transform: scale(1.1);
+    }
+    .menu-toggle{
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .menu-toggle:hover{
+        color: #ff5c00;
+    }
+    .menu.active{
+        opacity: 1;
+        pointer-events: auto;
+        min-height: 100vh;
+        min-width: 100vw;
+        background: black;
+        color: white;
+    }
+    .cabecalho {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-list{
+        display: none;
+    }
+    .nav-list ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .conteudo {
+        text-align: center;
+        margin: 10% 5%;
+    }
+    .slide{
+        min-width: 80%;
+        height: 250px;
+    }
+    .prev,
+    .next{
+        display: none;
+    }
+    .overlay{
+        opacity: 1;
+    }
+    .slide img{
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .Logo {
+        max-width: 70px;
+    }
+    .redes a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}

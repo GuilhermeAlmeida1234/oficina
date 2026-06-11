@@ -1,0 +1,31 @@
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 5vw, 60px);
+    padding: 20px;
+    text-decoration: none;
+}
+
+.redes a {
+    width: 45px;
+    height: 45px;
+    background: #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    text-decoration: none;
+    z-index: 110;
+}
+.redes a:hover {
+    transform: scale(1.5);
+}
+.whatsapp:hover { background: #25D366; }
+.instagram:hover {
+    background: linear-gradient(45deg,#F58529,#FEDA77,#DD2A7B,#8134AF,#515BD4);
+}
+.youtube:hover { background: #FF0000; }
+.twitter:hover { background: #000000; }

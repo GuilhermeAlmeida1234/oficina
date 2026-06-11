@@ -1,0 +1,42 @@
+
+.vantagens {
+    max-width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.vantagens:hover {
+    transform: translateY(-5px);
+}
+
+.vantagens h2 {
+    margin: 15px 0;
+}
+.card{
+    background-color: none;
+    min-width: 500px;
+    margin: 0 10px;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+.card h2{
+    color: #ff3c00;
+}
+.card p{
+    color: #ccc;
+}
+.icone{
+    font-size: 40px;
+    color: #ff5c00;
+    transition: 0.3s;
+}
+.icone{
+    text-decoration: none;
+}
+
+.icone:hover {
+    transform: scale(1.2) rotate(5deg);
+}

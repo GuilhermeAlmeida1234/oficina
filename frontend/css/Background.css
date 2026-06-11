@@ -1,0 +1,55 @@
+.home::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("../../Imagens/carro3.jpg") center/cover no-repeat;
+    z-index: -1;
+}
+.servicos::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(180deg, #0d0d0d, #000);
+    background-size: 40px 40px;
+    z-index: -1;
+}
+.contato::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, rgba(255,92,0,0.35), transparent 60%),
+        linear-gradient(180deg, #000, #111);
+    z-index: -1;
+}
+.sobre::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.10), transparent 50%),
+        linear-gradient(180deg, #0d0d0d, #000);
+    z-index: -1;
+}
+
+
+
+
+#bg{
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80% auto;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.Logo{
+    max-width: 120px;
+}
