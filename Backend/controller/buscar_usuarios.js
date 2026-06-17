@@ -1,4 +1,3 @@
-
 function listarUsuarios() {
 
     var tbody = document.querySelector("#tabela-alunos tbody");

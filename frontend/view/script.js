@@ -13,7 +13,6 @@ const formLogin = document.getElementById("formLogin");
 const formCadastro = document.getElementById("formCadastro");
 const formAgendamento = document.getElementById("formAgendamento")
 
-
 if (userIcon && loginModal) {
     userIcon.addEventListener("click", () => {
         loginModal.classList.add("active");

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+
+    <link rel="icon" href="../Imagens/black.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/Background.css">
+    <link rel="stylesheet" href="../css/Botões.css">
+    <link rel="stylesheet" href="../css/carrosel.css">
+    <link rel="stylesheet" href="../css/Carrossel2.css">
+    <link rel="stylesheet" href="../css/estrutura.css">
+    <link rel="stylesheet" href="../css/Layout.css">
+    <link rel="stylesheet" href="../css/Menu.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/NavList.css">
+    <link rel="stylesheet" href="../css/OverlaySlide.css">
+    <link rel="stylesheet" href="../css/Redes.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/styleBase.css">
+    <link rel="stylesheet" href="../css/Swal.css">
+    <link rel="stylesheet" href="../css/Textos.css">
+    <link rel="stylesheet" href="../css/Vantagens.css">
+
+</head>
+<body>
+    <header class="cabecalho">
+            <img src="../../Imagens/gray.png" alt="Logo da Oficina" class="Logo">
+        <nav class="nav-list">
+            <ul>
+                <li class="nav" id="home"><a href="base.html">Início</a></li>
+                <li class="nav" id="servicos"><a href="servicos.html">Serviços</a></li>
+                <li class="nav" id="sobre"><a href="sobre.html">Sobre Nós</a></li>
+                <li class="nav" id="contato"><a href="contato.html">Contato</a></li>
+            </ul>
+            <button class="usuario">
+                <i class="fa-solid fa-user" id="userIcon"></i>
+            </button>
+        </nav>
+            <button class="menu-toggle">☰</button>
+            <nav class="menu">
+                <ul>
+                    <li><a href="base.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+
+    </main>
+    <footer class="pe">
+        <div class="redes">
+            <a href="https://wa.me/" target="_blank" class="whatsapp icone">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" class="instagram icone">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" class="tiktok icone">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="twitter icone">
+                <i class="fa-brands fa-x"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="youtube icone">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+    </footer>
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Login</h2>
+            <form id="formLogin" novalidate>
+                <input type="text" name="Email" placeholder="Email" id="EmailLogin" required autocomplete="email">
+                <input type="password" name="Senha" placeholder="Senha" class="inputSenha" id="SenhaLogin" required>
+                <button type="submit" class="btnSubmit" id="btnSubmitLogin">Entrar</button>
+            </form>
+            <p>
+                Não tem uma conta?
+            </p>
+            <a href="#" id="abrirCadastro">Cadastre-se</a>
+        </div>
+    </div>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro" novalidate>
+                <input type="text" name="nome" id="nomeCadastro" placeholder="Nome Completo" class="inputNome" autocomplete="name">
+                <input type="text" name="email" placeholder="Email" required class="inputEmail" id="EmailCadastro" autocomplete="email">
+                <input type="password" name="senha" placeholder="Senha" required id="SenhaCadastro">
+                <input type="password" name="confirmarSenha" required placeholder="Confirmar Senha" class="inputSenha" id="ConfirmarSenhaCadastro">
+                <button type="submit" class="btnSubmit" id="btnSubmitCadastro">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
