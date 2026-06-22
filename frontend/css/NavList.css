@@ -38,3 +38,9 @@
     transform: scale(1.3);
     cursor: pointer;
 }
+#admin{
+    display: none;
+}
+.adm-active{
+    display: inline;
+}
