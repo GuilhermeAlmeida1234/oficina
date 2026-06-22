@@ -40,7 +40,7 @@ exports.listar = (callback) => {
     conexao.query(sql, (erro, resultado) => {
         if (erro) {
             throw erro;
-        }
+        } 
 
         callback(resultado);
     });
