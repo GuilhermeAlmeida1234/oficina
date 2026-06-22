@@ -7,6 +7,9 @@
 
     <link rel="icon" href="../Imagens/black.png">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="../css/Background.css">
@@ -26,13 +29,15 @@
     <link rel="stylesheet" href="../css/Swal.css">
     <link rel="stylesheet" href="../css/Textos.css">
     <link rel="stylesheet" href="../css/Vantagens.css">
+    <link rel="stylesheet" href="../css/admin.css">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
-    <script src="../model/usuarios.js" defer></script>
-    <script src="../controller/buscar_usuarios.js" defer></script>
-    <script src="../controller/criar_usuario.js" defer></script>
-    <script src="../view/carrossel.js" defer></script>
-    <script src="../view/script.js" defer></script>
+    <script src="../../Backend/model/usuarios.js" defer></script>
+    <script src="../../Backend/controller/buscar_usuarios.js" defer></script>
+    <script src="../../Backend/controller/criar_usuario.js" defer></script>
+    <script src="../../frontend/view/carrossel.js" defer></script>
+    <script src="../../frontend/view/script.js" defer></script>
+    <script src="../view/usuario-view.js" defer></script>
 
 </head>
 <body>
@@ -62,7 +67,22 @@
             </nav>
     </header>
     <main>
+        <div class="caixa">
+            <table id="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
 
+                </tbody>
+            </table>
+        </div>
+        <button id="btnConsultarUsuario" type="button" class="btn btn-outline-primary">Consultar</button>
     </main>
     <footer class="pe">
         <div class="redes">

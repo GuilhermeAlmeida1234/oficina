@@ -1,0 +1,46 @@
+body {
+    background-color: #111827;
+}
+
+main {
+    background-color: #1f2937;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+th {
+    background-color: #2967a5;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+th, td {
+    border: 1px solid #525252;
+    padding: 5px 10px;
+}
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+tr:hover{
+    background-color: #e6f2ff;
+    transition: 0.3s;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+.caixa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tabela-usuarios {
+    max-width: 500px;
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}

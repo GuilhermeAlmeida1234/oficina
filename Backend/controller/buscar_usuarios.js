@@ -1,6 +1,8 @@
+var btnConsultar = document.querySelector("#btnConsultarUsuario");
+
 function listarUsuarios() {
 
-    var tbody = document.querySelector("#tabela-alunos tbody");
+    var tbody = document.querySelector("#tabela-usuarios tbody");
 
     tbody.innerHTML = "";
 
@@ -10,7 +12,7 @@ function listarUsuarios() {
 
         obterUsuarios.forEach(function(aluno) {
 
-            var linha = criaLinhaAluno(aluno);
+            var linha = criaLinhaUsuario(aluno);
 
             tbody.appendChild(linha);
         });
@@ -18,3 +20,6 @@ function listarUsuarios() {
 
 }
 
+btnConsultar.addEventListener("click", function () {
+    listarUsuarios();
+});
