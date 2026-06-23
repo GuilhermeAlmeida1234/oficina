@@ -8,6 +8,8 @@ exports.cadastrarUsuario = async (usuario, callback) => {
 
         usuario.senha = senhaHash;
 
+        usuario.funcao = "usuario";
+
         usuarioRepository.salvar(usuario, callback);
     }
     catch (erro) {
