@@ -21,33 +21,40 @@ exports.login = (usuario, callback) => {
 
     usuarioRepository.buscarPorLogin(usuario.email, async (resultado) => {
 
-            if (resultado.length === 0) {
+        if (resultado.length === 0) {
 
-                return callback({
-                    autenticado: false
-                });
-            }
+            return callback({
+                autenticado: false
+            });
+        }
 
-            const senhaValida = await bcrypt.compare(usuario.senha, resultado[0].senha);
+        const senhaValida = await bcrypt.compare(
+            usuario.senha,
+            resultado[0].senha
+        );
 
-            if (senhaValida) {
+        if (senhaValida) {
 
-                callback({
-                    autenticado: true,
-                    usuario: resultado[0]
-                });
+            callback({
+                autenticado: true,
+                usuario: {
+                    id_usuario: resultado[0].id_usuario,
+                    nome: resultado[0].nome,
+                    email: resultado[0].email,
+                    funcao: resultado[0].funcao
+                    }
+});
 
-            } else {
+        } else {
 
-                callback({
-                    autenticado: false,
-                    usuario: null
-                });
-
-            }
+            callback({
+                autenticado: false,
+                usuario: null
+            });
 
         }
-    )
+
+    });
 };
 
 exports.listarUsuarios = (callback) => {

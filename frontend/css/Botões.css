@@ -1,4 +1,4 @@
-.btn{  /*Esse botão vai para a proxima imagem do carrosel*/
+.btn{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
