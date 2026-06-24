@@ -30,7 +30,6 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
             );
 
 
-            // Esconde administração para usuário comum
             if (dados.usuario.funcao !== "administrador") {
 
                 const admin = document.getElementById("admin");
@@ -44,7 +43,7 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
 
             if (dados.usuario.funcao === "administrador") {
 
-                window.location.href = "admin.html";
+                document.getElementById("admin").style.display = "flex";
 
             } else {
 
@@ -60,7 +59,6 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
             alert("Email ou senha incorretos");
 
         }
-
     })
     .catch(erro => console.error(erro));
 
