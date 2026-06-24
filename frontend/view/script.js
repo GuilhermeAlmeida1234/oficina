@@ -79,11 +79,14 @@ document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
 const toggle = document.querySelector(".menu-toggle");
 
 window.addEventListener("click", (e) => {
+    const menu = document.querySelector(".menu");
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {
         menu.classList.remove("active");
     }
 });
+const menu = document.querySelector(".menu");
 menu.addEventListener("click", (e) => {
+    const menu = document.querySelector(".menu");
     menu.classList.remove("active");
     document.body.classList.remove("no-scroll");
 });
@@ -107,3 +110,4 @@ toggle.addEventListener("click", () => {
         });
     }
 });
+

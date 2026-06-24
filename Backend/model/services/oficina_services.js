@@ -1,5 +1,6 @@
 const usuarioRepository = require("../../model/repositories/usuario_repositorio");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 exports.cadastrarUsuario = async (usuario, callback) => {
 
@@ -35,16 +36,27 @@ exports.login = (usuario, callback) => {
 
         if (senhaValida) {
 
+            const token = jwt.sign({
+                id_usuario: resultado[0].id_usuario,
+                nome: resultado[0].nome,
+                email: resultado[0].email,
+                funcao: resultado[0].funcao
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1h"
+            }
+        );
             callback({
                 autenticado: true,
+                token: token,
                 usuario: {
                     id_usuario: resultado[0].id_usuario,
                     nome: resultado[0].nome,
                     email: resultado[0].email,
                     funcao: resultado[0].funcao
-                    }
-});
-
+                }
+            });
         } else {
 
             callback({

@@ -25,6 +25,11 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
         if (dados.autenticado) {
 
             localStorage.setItem(
+                "token",
+                dados.token
+            );
+            
+            localStorage.setItem(
                 "usuario",
                 JSON.stringify(dados.usuario)
             );
@@ -42,14 +47,25 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
 
 
             if (dados.usuario.funcao === "administrador") {
+                
+                swal({
+                    title: "Sucesso!",
+                    text: "Login realizado!",
+                    icon: "success"
+                });
 
                 document.getElementById("admin").style.display = "flex";
+                document.getElementById("loginModal").style.display = "none";
 
             } else {
 
-                document.getElementById("loginModal").style.display = "none";
+                swal({
+                    title: "Sucesso!",
+                    text: "Login realizado!",
+                    icon: "success"
+                });
 
-                alert("Login realizado!");
+                document.getElementById("loginModal").style.display = "none";
 
             }
 
@@ -61,5 +77,4 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
         }
     })
     .catch(erro => console.error(erro));
-
 });

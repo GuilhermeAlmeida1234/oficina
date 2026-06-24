@@ -65,16 +65,17 @@ if (carrossel && nextBtn && prevBtn) {
     carrossel.addEventListener("mouseleave", iniciarAutoPlay);
 
     document.addEventListener("click", function (event) {
-    if (menu.classList.contains("active")) {
-        pararAutoPlay();
-    }
-    if (!menu.classList.contains("active")) {
-        iniciarAutoPlay();
-    }
-})
+        const menu = document.querySelector(".menu");
+
+        if (menu.classList.contains("active")) {
+            pararAutoPlay();
+        }
+        if (!menu.classList.contains("active")) {
+            iniciarAutoPlay();
+        }
+    })
 
 }
-const menu = document.querySelector(".menu");
 
 
 
