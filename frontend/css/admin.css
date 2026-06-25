@@ -25,6 +25,9 @@ td {
     border-bottom: 1px solid #ddd;
     color: #333;
 }
+tr{
+    background-color: antiquewhite;
+}
 tr:hover{
     background-color: #e6f2ff;
     transition: 0.3s;
@@ -38,7 +41,7 @@ tr:last-child td {
     justify-content: center;
 }
 #tabela-usuarios {
-    max-width: 500px;
+    max-width: 700px;
     width: 80%;
     border-collapse: collapse;
     margin: 20px auto;

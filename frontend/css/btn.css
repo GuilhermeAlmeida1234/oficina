@@ -1,0 +1,28 @@
+.btn-excluir {
+    background-color: #da190b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.btn-excluir:hover{
+    background-color: rgb(221, 14, 14);
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.btn-editar{
+    background-color: #615555;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.btn-editar:hover{
+    background-color: rgb(88, 73, 73);
+    transition: 0.3s;
+    transform: scale(1.1);
+}

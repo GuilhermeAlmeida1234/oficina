@@ -1,0 +1,129 @@
+.ContainerSobre{
+    min-height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    color:white;
+}
+ 
+.ContainerSobre h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+ 
+.ContainerSobre p{
+    max-width:700px;
+    font-size:1.2rem;
+    line-height:1.8;
+}
+ 
+.btn-sobre{
+    margin-top:30px;
+    padding:15px 35px;
+    background:#f39c12;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:.3s;
+}
+ 
+.btn-sobre:hover{
+    background:#d68910;
+}
+ 
+.estatisticas{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
+    padding:60px 20px;
+}
+ 
+.stat{
+    text-align:center;
+}
+ 
+.stat h2{
+    font-size:3rem;
+    color:#f39c12;
+}
+ 
+.titulo-secao{
+    text-align:center;
+    font-size:2.5rem;
+    margin:60px 0 30px;
+}
+
+.mapa-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+.Mapa{
+    width:90%;
+    height:500px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+ 
+.vantagens{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:60px 20px;
+}
+ 
+.vantagem{
+    width:300px;
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+ 
+.vantagem i{
+    font-size:3rem;
+    color:#f39c12;
+    margin-bottom:15px;
+}
+ 
+.card{
+    border-radius:20px;
+    transition:.4s;
+}
+ 
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+ 
+.grid-galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+}
+ 
+.grid-galeria img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.3s;
+}
+ 
+.grid-galeria img:hover{
+    transform:scale(1.05);
+}
+ 
+.pe{
+    text-align:center;
+    padding:50px 20px;
+}

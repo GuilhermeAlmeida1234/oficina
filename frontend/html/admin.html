@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../css/Botões.css">
     <link rel="stylesheet" href="../css/carrosel.css">
     <link rel="stylesheet" href="../css/Carrossel2.css">
-    <link rel="stylesheet" href="../css/estrutura.css">
     <link rel="stylesheet" href="../css/Layout.css">
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../css/modal.css">
@@ -22,12 +21,13 @@
     <link rel="stylesheet" href="../css/OverlaySlide.css">
     <link rel="stylesheet" href="../css/Redes.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/styleBase.css">
     <link rel="stylesheet" href="../css/Swal.css">
     <link rel="stylesheet" href="../css/Textos.css">
     <link rel="stylesheet" href="../css/Vantagens.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/btn.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
     <script src="../../frontend/view/carrossel.js" defer></script>
@@ -35,7 +35,12 @@
     <script src="../view/usuario-view.js" defer></script>
     <script src="../view/login.js" defer></script>
     <script src="../view/auth.js" defer></script>
-
+    <script src="../../Backend/controller/editar_usuario.js" defer></script>
+    <script src="../../Backend/controller/buscar_usuarios.js" defer></script>
+    <script src="../../Backend/controller/criar_usuario.js" defer></script>
+    <script src="../controller/api-usuarios.js" defer></script>
+    <script src="../../Backend/controller/excluir_usuarios.js" defer></script>
+    
 </head>
 
 <body>
@@ -73,6 +78,7 @@
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,9 +86,16 @@
                 </tbody>
             </table>
         </div>
-        <button id="btnConsultarUsuario" type="button" class="btn">Consultar</button>
     </main>
     <footer class="pe">
+
+        <h3>Oficina Viçosa</h3>
+
+        <p>
+            Especializada em manutenção automotiva com qualidade,
+            confiança e excelência.
+        </p>
+
         <div class="redes">
             <a href="https://wa.me/" target="_blank" class="whatsapp icone">
                 <i class="fa-brands fa-whatsapp"></i>
@@ -100,6 +113,11 @@
                 <i class="fa-brands fa-youtube"></i>
             </a>
         </div>
+
+        <p>
+            © 2025 Oficina Viçosa - Todos os direitos reservados.
+        </p>
+
     </footer>
     <div class="modal" id="loginModal">
         <div class="modal-content">
@@ -131,6 +149,27 @@
                 <button type="submit" class="btnSubmit" id="btnSubmitCadastro">Cadastrar</button>
             </form>
         </div>
+    </div>
+    <div class="modal" id="editarModal">
+        <div class="modal-content">
+            <span class="fechar" id="fecharEditar">&times;</span>
+
+            <h2>Editar Usuário</h2>
+
+            <input type="text" id="nomeEditar" placeholder="Nome">
+
+            <input type="email" id="emailEditar" placeholder="Email">
+
+            <select id="funcaoEditar">
+
+                <option value="administrador">Administrador</option>
+
+                <option value="usuario">Usuário</option>
+
+            </select>
+            <button class="btnSubmit" id="btnSalvarEdicao">Salvar</button>
+        </div>
+
     </div>
     <script>
 

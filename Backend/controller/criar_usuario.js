@@ -4,7 +4,8 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
     const usuario = obtemUsuarioDoFormulario(frmUsuario);
 
         if (validarFormularioUsuario(frmUsuario) == false) {
-        return;
+            console.log("erro");
+            return;
         }
         fetch("http://localhost:3000/usuarios", {
             method: "POST",
@@ -19,7 +20,6 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
             });
 
         frmUsuario.reset();
-        console.log("Executando POST");
 });
 
 function obtemUsuarioDoFormulario(frmUsuario) {

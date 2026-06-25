@@ -4,6 +4,7 @@ function obterUsuarios() {
 }
 
 function salvarUsuario(aluno){
+    console.log("model");
     return fetch("http://localhost:3000/usuarios", {
         method: "POST",
         headers: {
@@ -12,3 +13,4 @@ function salvarUsuario(aluno){
         body: JSON.stringify(aluno)
     })
 }
+

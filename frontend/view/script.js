@@ -14,7 +14,7 @@ const formCadastro = document.getElementById("formCadastro");
 const formAgendamento = document.getElementById("formAgendamento")
 
 if (userIcon && loginModal) {
-    userIcon.addEventListener("click", () => {
+    userIcon.addEventListener("click", () => {2
         loginModal.classList.add("active");
     });
 }
@@ -110,4 +110,13 @@ toggle.addEventListener("click", () => {
         });
     }
 });
+
+const fechar = document.querySelector("#fecharEditar");
+
+if (fechar) {
+    fechar.addEventListener("click", function () {
+        document.querySelector("#editarModal")
+            .classList.remove("active");
+    });
+}
 

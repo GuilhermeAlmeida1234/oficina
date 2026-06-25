@@ -53,10 +53,10 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
                     text: "Login realizado!",
                     icon: "success"
                 });
+                const formLogin = document.getElementById("formLogin");
 
                 document.getElementById("admin").style.display = "flex";
-                document.getElementById("loginModal").style.display = "none";
-
+                formLogin.classList.remove("active");
             } else {
 
                 swal({

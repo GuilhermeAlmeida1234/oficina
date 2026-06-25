@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const oficinaRoutes = require("./routers/oficina_routes");
+const oficinaRoutes = require("./routers/oficina_routes.js");
 
 const app = express();
 

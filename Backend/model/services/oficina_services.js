@@ -4,6 +4,8 @@ const jwt = require("jsonwebtoken");
 
 exports.cadastrarUsuario = async (usuario, callback) => {
 
+    console.log("service");
+
     try {
         const senhaHash = await bcrypt.hash(usuario.senha, 10);
 
@@ -74,3 +76,30 @@ exports.listarUsuarios = (callback) => {
         callback(resultado);
     });
 };
+
+exports.excluirUsuario = (id, callback) => {
+    usuarioRepository.excluir(id, (resultado) => {
+        callback(resultado);
+    });
+};
+
+exports.atualizarUsuario = (id, usuario, callback)=>{
+
+
+    usuarioRepository.editar(
+
+        id,
+
+        usuario,
+
+        (resultado)=>{
+
+            callback(resultado);
+
+        }
+
+    );
+
+
+}
+

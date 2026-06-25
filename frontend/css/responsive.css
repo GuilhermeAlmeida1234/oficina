@@ -89,6 +89,10 @@
     .slide img{
         transform: scale(1.05);
     }
+    #tabela-usuarios{
+        max-width: 300px;
+        width: 80%;
+    }
 }
 
 @media (max-width: 375px) {
@@ -102,5 +106,8 @@
         width: 35px;
         height: 35px;
         font-size: 14px;
+    }
+    #tabela-usuarios{
+        max-width: 300px;
     }
 }
