@@ -4,12 +4,12 @@
     inset: 0;
     background:
         linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url("../../Imagens/carro3.jpg") center/cover no-repeat;
+        url("../Imagens/carro3.jpg") center/cover no-repeat;
     z-index: -1;
 }
 .servicos::before{
     content: '';
-    position: fixed;
+    position: fixed;    
     inset: 0;
     background:
         linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
