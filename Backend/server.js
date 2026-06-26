@@ -14,4 +14,4 @@ app.listen(3000, () => {
     console.log("Servidor rodando em http://localhost:3000");
 });
 
-const conexao = require('./database/conexao');
+const conexao = require('./database/conexao.js');
