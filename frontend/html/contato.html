@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/Botões.css">
     <link rel="stylesheet" href="../css/carrosel.css">
     <link rel="stylesheet" href="../css/Carrossel2.css">
+    <link rel="stylesheet" href="../css/estrutura.css">
     <link rel="stylesheet" href="../css/Layout.css">
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../css/modal.css">
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="../css/OverlaySlide.css">
     <link rel="stylesheet" href="../css/Redes.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/styleBase.css">
     <link rel="stylesheet" href="../css/Swal.css">
     <link rel="stylesheet" href="../css/Textos.css">
@@ -44,167 +46,168 @@
 
 <body class="contato">
 
-<header class="cabecalho">
-    <img src="../Imagens/gray.png" class="Logo">
+    <header class="cabecalho">
+        <img src="../Imagens/gray.png" class="Logo">
 
-    <nav class="nav-list">
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="servicos.html">Serviços</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+        <nav class="nav-list">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
 
-        <button class="usuario">
-            <i class="fa-solid fa-user" id="userIcon"></i>
-        </button>
-    </nav>
-</header>
-
-<main>
-    <section class="conteudo">
-        <h1>Contato</h1>
-
-        <form id="formEmail" novalidate>
-
-            <label>Nome:</label>
-            <input type="text" id="nome" name="nome">
-
-            <label>Email:</label>
-            <input type="text" id="email" name="email">
-
-            <label>Tipo de Contato:</label>
-            <select id="contato" name="contato">
-                <option value="selecione">Selecione</option>
-                <option value="sugestao">Sugestão</option>
-                <option value="reclamacao">Reclamação</option>
-                <option value="duvida">Dúvida</option>
-                <option value="elogio">Elogio</option>
-                <option value="outros">Outros</option>
-            </select>
-
-            <label>Mensagem:</label>
-            <textarea id="texto" name="texto" rows="5"></textarea>
-
-            <button type="submit" class="Botão" id="btnSubmit">
-                Enviar
+            <button class="usuario">
+                <i class="fa-solid fa-user" id="userIcon"></i>
             </button>
+        </nav>
+    </header>
 
-        </form>
-    </section>
-</main>
+    <main>
+        <section class="conteudo">
+            <h1>Contato</h1>
 
-<div class="modal" id="loginModal">
-    <div class="modal-content">
-        <span class="fechar">&times;</span>
-        <h2>Login</h2>
-        <form id="formLogin">
-            <input type="text" id="EmailLogin" placeholder="Email">
-            <input type="password" id="SenhaLogin" placeholder="Senha">
-            <button type="submit" class="btnSubmit">Entrar</button>
-        </form>
+            <form id="formEmail" novalidate>
+
+                <label>Nome:</label>
+                <input type="text" id="nome" name="nome">
+
+                <label>Email:</label>
+                <input type="text" id="email" name="email">
+
+                <label>Tipo de Contato:</label>
+                <select id="contato" name="contato">
+                    <option value="selecione">Selecione</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="elogio">Elogio</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <label>Mensagem:</label>
+                <textarea id="texto" name="texto" rows="5"></textarea>
+
+                <button type="submit" class="Botão" id="btnSubmit">
+                    Enviar
+                </button>
+
+            </form>
+        </section>
+    </main>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Login</h2>
+            <form id="formLogin">
+                <input type="text" id="EmailLogin" placeholder="Email">
+                <input type="password" id="SenhaLogin" placeholder="Senha">
+                <button type="submit" class="btnSubmit">Entrar</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="modal" id="cadastroModal">
-    <div class="modal-content">
-        <span class="fechar">&times;</span>
-        <h2>Cadastro</h2>
-        <form id="formCadastro">
-            <input type="text" id="EmailCadastro" placeholder="Email">
-            <input type="password" id="SenhaCadastro" placeholder="Senha">
-            <button type="submit" class="btnSubmit">Cadastrar</button>
-        </form>
+    <div class="modal" id="cadastroModal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro">
+                <input type="text" id="EmailCadastro" placeholder="Email">
+                <input type="password" id="SenhaCadastro" placeholder="Senha">
+                <button type="submit" class="btnSubmit">Cadastrar</button>
+            </form>
+        </div>
     </div>
-</div>
 
-<div class="modal" id="perfilModal">
-    <div class="modal-content">
-        <span class="fechar" id="fecharPerfil">&times;</span>
+    <div class="modal" id="perfilModal">
+        <div class="modal-content">
+            <span class="fechar" id="fecharPerfil">&times;</span>
 
-        <h2>Meu Perfil</h2>
+            <h2>Meu Perfil</h2>
 
-        <p>Nome: <span id="nomeUsuario"></span></p>
-        <p>Email: <span id="emailUsuario"></span></p>
+            <p>Nome: <span id="nomeUsuario"></span></p>
+            <p>Email: <span id="emailUsuario"></span></p>
 
-        <button class="btnSubmit" id="btnSair">Sair</button>
+            <button class="btnSubmit" id="btnSair">Sair</button>
+        </div>
     </div>
-</div>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-<script>
-(function(){
-    emailjs.init("OEquGiC5Rsa2tjwBw");
-})();
-</script>
+    <script>
+        (function () {
+            emailjs.init("OEquGiC5Rsa2tjwBw");
+        })();
+    </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-    const form = document.getElementById("formEmail");
+            const form = document.getElementById("formEmail");
 
-    const nomeInput = document.getElementById("nome");
-    const emailInput = document.getElementById("email");
-    const contatoSelect = document.getElementById("contato");
-    const mensagemInput = document.getElementById("texto");
+            const nomeInput = document.getElementById("nome");
+            const emailInput = document.getElementById("email");
+            const contatoSelect = document.getElementById("contato");
+            const mensagemInput = document.getElementById("texto");
 
-    function validarEmail(email){
-        const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return padrao.test(email);
-    }
+            function validarEmail(email) {
+                const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return padrao.test(email);
+            }
 
-    function validarCampos(){
+            function validarCampos() {
 
-        if(nomeInput.value.trim() === "" ||
-           emailInput.value.trim() === "" ||
-           mensagemInput.value.trim() === ""){
+                if (nomeInput.value.trim() === "" ||
+                    emailInput.value.trim() === "" ||
+                    mensagemInput.value.trim() === "") {
 
-            swal("Erro", "Preencha todos os campos", "error");
-            return false;
-        }
+                    swal("Erro", "Preencha todos os campos", "error");
+                    return false;
+                }
 
-        if(contatoSelect.value === "selecione"){
+                if (contatoSelect.value === "selecione") {
 
-            swal("Erro", "Selecione o tipo de contato", "error");
-            return false;
-        }
+                    swal("Erro", "Selecione o tipo de contato", "error");
+                    return false;
+                }
 
-        if(!validarEmail(emailInput.value)){
+                if (!validarEmail(emailInput.value)) {
 
-            swal("Erro", "Email inválido", "error");
-            return false;
-        }
+                    swal("Erro", "Email inválido", "error");
+                    return false;
+                }
 
-        return true;
-    }
+                return true;
+            }
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
 
-        if(!validarCampos()) return;
+                if (!validarCampos()) return;
 
-        emailjs.sendForm(
-            "service_va8j8f5",
-            "template_9pep37f",
-            form
-        ).then(() => {
+                emailjs.sendForm(
+                    "service_va8j8f5",
+                    "template_9pep37f",
+                    form
+                ).then(() => {
 
-            swal("Sucesso!", "Mensagem enviada!", "success");
-            form.reset();
+                    swal("Sucesso!", "Mensagem enviada!", "success");
+                    form.reset();
 
-        }).catch((err) => {
+                }).catch((err) => {
 
-            swal("Erro", "Falha ao enviar: " + err.text, "error");
+                    swal("Erro", "Falha ao enviar: " + err.text, "error");
+
+                });
+
+            });
 
         });
-
-    });
-
-});
-</script>
+    </script>
 
 </body>
+
 </html>
