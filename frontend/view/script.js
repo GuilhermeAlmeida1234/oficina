@@ -113,8 +113,9 @@ function animarLinks() {
     itensMenu.forEach((item, index) => {
         item.style.transitionDelay = `${index * 0.1}s`;
     });
-}
+};
 
+if (toggle){
 toggle.addEventListener("click", () => {
     menu.classList.add("active");
 
@@ -126,6 +127,7 @@ toggle.addEventListener("click", () => {
         });
     }
 });
+};
 
 const fechar = document.querySelector("#fecharEditar");
 
