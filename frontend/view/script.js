@@ -99,11 +99,13 @@ window.addEventListener("click", (e) => {
     }
 });
 const menu = document.querySelector(".menu");
-menu.addEventListener("click", (e) => {
-    const menu = document.querySelector(".menu");
-    menu.classList.remove("active");
-    document.body.classList.remove("no-scroll");
-});
+if (menu) {
+    menu.addEventListener("click", (e) => {
+        const menu = document.querySelector(".menu");
+        menu.classList.remove("active");
+        document.body.classList.remove("no-scroll");
+    });
+}
 
 const itensMenu = document.querySelectorAll(".menu ul li");
 
