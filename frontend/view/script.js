@@ -54,7 +54,7 @@ if (fecharCadastro && cadastroModal && formCadastro) {
     });
 }
 
-if (fecharAgendamento && agendamentoModal){
+if (fecharAgendamento && agendamentoModal) {
 
     fecharAgendamento.addEventListener("click", () => {
         agendamentoModal.classList.remove("active");
@@ -74,7 +74,7 @@ window.addEventListener("click", (e) => {
         formLogin.reset();
     }
 
-    if (e.target === agendamentoModal){
+    if (e.target === agendamentoModal) {
         agendamentoModal.classList.remove("active");
         formAgendamento.reset();
     }
@@ -86,10 +86,12 @@ function toggleMenu() {
     document.body.classList.toggle("no-scroll");
 }
 
-document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
 
 const toggle = document.querySelector(".menu-toggle");
 
+if (toggle) {
+    toggle.addEventListener("click", toggleMenu);
+}
 window.addEventListener("click", (e) => {
     const menu = document.querySelector(".menu");
     if (!menu.contains(e.target) && !toggle.contains(e.target)) {

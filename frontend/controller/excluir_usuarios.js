@@ -1,36 +1,38 @@
 var tabela = document.querySelector("#tabela-usuarios");
 
-tabela.addEventListener("click", function (event) {
+if (tabela) {
+    tabela.addEventListener("click", function (event) {
 
-    event.preventDefault();
-    event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-    var elementoClicado = event.target;
+        var elementoClicado = event.target;
 
-    if (elementoClicado.classList.contains("btn-excluir")) {
+        if (elementoClicado.classList.contains("btn-excluir")) {
 
-        var linha = elementoClicado.closest("tr");
+            var linha = elementoClicado.closest("tr");
 
-        var idUsuario = linha.dataset.id;
+            var idUsuario = linha.dataset.id;
 
-        fetch(`${API}/${idUsuario}`, {
-            method: "DELETE",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-        .then(response => response.json())
-        .then(dados => {
+            fetch(`${API}/${idUsuario}`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+                .then(response => response.json())
+                .then(dados => {
 
-            console.log(dados);
+                    console.log(dados);
 
-            listarUsuarios();
+                    listarUsuarios();
 
-        })
-        .catch(erro => {
-            console.log(erro);
-        });
+                })
+                .catch(erro => {
+                    console.log(erro);
+                });
 
-    }
+        }
 
-}); 
+    });
+}
