@@ -155,5 +155,6 @@ if (btnSair) {
 
         document.querySelector("#perfilModal")
             .classList.remove("active");
+        window.location.reload()
     });
 }
