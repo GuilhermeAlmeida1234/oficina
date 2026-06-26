@@ -1,37 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", ()=>{
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const btnUsuario = document.querySelector("#btnUsuario");
+    const perfilModal = document.querySelector("#perfilModal");
+    const loginModal = document.querySelector("#loginModal");
 
-    const cadastro = document.querySelector("#cadastroModal");
-    const perfil = document.querySelector("#perfilModal");
 
 
-    if (usuario) {
+    if(btnUsuario){
 
-        document.querySelector("#nomeUsuario").textContent = usuario.nome;
-        document.querySelector("#emailUsuario").textContent = usuario.email;
-        document.querySelector("#tipoUsuario").textContent = usuario.tipo_usuario;
+        btnUsuario.addEventListener("click", ()=>{
 
-        perfil.classList.add("active");
+            const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-        if (cadastro) {
-            cadastro.classList.remove("active");
-        }
 
-    }
+            if(usuario){
+                document.querySelector("#nomeUsuario").textContent = usuario.nome;
+                document.querySelector("#emailUsuario").textContent = usuario.email;
 
-    const btnSair = document.querySelector("#btnSair");
+                perfilModal.classList.add("active");
 
-    if (btnSair) {
 
-        btnSair.addEventListener("click", () => {
+            }else{
+                loginModal.classList.add("active");
 
-            localStorage.removeItem("usuario");
-            localStorage.removeItem("token");
-
-            location.reload();
+            }
 
         });
 
     }
+    const fecharPerfil = document.querySelector("#fecharPerfil");
+
+    if(fecharPerfil){
+
+        fecharPerfil.addEventListener("click",()=>{
+            perfilModal.classList.remove("active");
+        });
+
+    }
+    const btnSair = document.querySelector("#btnSair");
+
+    if(btnSair){
+
+        btnSair.addEventListener("click",()=>{
+
+            localStorage.removeItem("usuario");
+            localStorage.removeItem("token");
+
+            perfilModal.classList.remove("active");
+
+        });
+
+    }
+
 });
