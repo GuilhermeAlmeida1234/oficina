@@ -1,55 +1,28 @@
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
 
     const btnUsuario = document.querySelector("#btnUsuario");
+    const loginModal = document.querySelector("#cadastroModal"); // seu login
     const perfilModal = document.querySelector("#perfilModal");
-    const loginModal = document.querySelector("#loginModal");
 
+    if (!btnUsuario) return;
 
+    btnUsuario.addEventListener("click", () => {
 
-    if(btnUsuario){
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-        btnUsuario.addEventListener("click", ()=>{
+        if (usuario && perfilModal) {
 
-            const usuario = JSON.parse(localStorage.getItem("usuario"));
+            perfilModal.classList.add("active");
 
+            document.querySelector("#nomeUsuario").textContent = usuario.nome;
+            document.querySelector("#emailUsuario").textContent = usuario.email;
 
-            if(usuario){
-                document.querySelector("#nomeUsuario").textContent = usuario.nome;
-                document.querySelector("#emailUsuario").textContent = usuario.email;
+        } else if (loginModal) {
 
-                perfilModal.classList.add("active");
+            loginModal.classList.add("active");
 
+        }
 
-            }else{
-                loginModal.classList.add("active");
-
-            }
-
-        });
-
-    }
-    const fecharPerfil = document.querySelector("#fecharPerfil");
-
-    if(fecharPerfil){
-
-        fecharPerfil.addEventListener("click",()=>{
-            perfilModal.classList.remove("active");
-        });
-
-    }
-    const btnSair = document.querySelector("#btnSair");
-
-    if(btnSair){
-
-        btnSair.addEventListener("click",()=>{
-
-            localStorage.removeItem("usuario");
-            localStorage.removeItem("token");
-
-            perfilModal.classList.remove("active");
-
-        });
-
-    }
+    });
 
 });

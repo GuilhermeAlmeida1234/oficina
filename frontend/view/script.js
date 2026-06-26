@@ -13,9 +13,21 @@ const formLogin = document.getElementById("formLogin");
 const formCadastro = document.getElementById("formCadastro");
 const formAgendamento = document.getElementById("formAgendamento")
 
-if (userIcon && loginModal) {
-    userIcon.addEventListener("click", () => {2
-        loginModal.classList.add("active");
+if (userIcon) {
+    userIcon.addEventListener("click", () => {
+
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+        if (!usuario) {
+            loginModal.classList.add("active");
+            return;
+        }
+        const perfilModal = document.getElementById("perfilModal");
+        if (perfilModal) {
+            perfilModal.classList.add("active");
+            document.getElementById("nomeUsuario").textContent = usuario.nome;
+            document.getElementById("emailUsuario").textContent = usuario.email;
+        }
+
     });
 }
 
@@ -119,4 +131,23 @@ if (fechar) {
             .classList.remove("active");
     });
 }
+const fecharPerfil = document.querySelector("#fecharPerfil");
+const perfilModal = document.querySelector("#perfilModal");
 
+if (fecharPerfil && perfilModal) {
+    fecharPerfil.addEventListener("click", () => {
+        perfilModal.classList.remove("active");
+    });
+}
+const btnSair = document.querySelector("#btnSair");
+
+if (btnSair) {
+    btnSair.addEventListener("click", () => {
+
+        localStorage.removeItem("usuario");
+        localStorage.removeItem("token");
+
+        document.querySelector("#perfilModal")
+            .classList.remove("active");
+    });
+}

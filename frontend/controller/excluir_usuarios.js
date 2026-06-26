@@ -13,7 +13,7 @@ tabela.addEventListener("click", function (event) {
 
         var idUsuario = linha.dataset.id;
 
-        fetch(`http://localhost:3000/usuarios/${idUsuario}`, {
+        fetch(`${API}/${idUsuario}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${token}`

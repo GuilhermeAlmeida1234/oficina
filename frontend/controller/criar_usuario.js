@@ -7,7 +7,7 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
             console.log("erro");
             return;
         }
-        fetch("http://localhost:3000/usuarios", {
+        fetch(`${API}/usuarios`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

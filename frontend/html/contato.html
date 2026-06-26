@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,11 @@
     <link rel="icon" href="../Imagens/black.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="../css/Background.css">
     <link rel="stylesheet" href="../css/Botões.css">
     <link rel="stylesheet" href="../css/carrosel.css">
     <link rel="stylesheet" href="../css/Carrossel2.css">
-    <link rel="stylesheet" href="../css/estrutura.css">
     <link rel="stylesheet" href="../css/Layout.css">
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../css/modal.css">
@@ -20,229 +20,194 @@
     <link rel="stylesheet" href="../css/OverlaySlide.css">
     <link rel="stylesheet" href="../css/Redes.css">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/styleBase.css">
     <link rel="stylesheet" href="../css/Swal.css">
     <link rel="stylesheet" href="../css/Textos.css">
     <link rel="stylesheet" href="../css/Vantagens.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/btn.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/perfil.css">
 
-</head>
-<body class="contato">
-    <header class="cabecalho">
-            <img src="../Imagens/gray.png" alt="Logo da Oficina" class="Logo">
-        <nav class="nav-list">
-            <ul>
-                <li class="nav" id="home"><a href="index.html">Início</a></li>
-                <li class="nav" id="servicos"><a href="servicos.html">Serviços</a></li>
-                <li class="nav" id="sobre"><a href="sobre.html">Sobre Nós</a></li>
-                <li class="nav" id="contato"><a href="#">Contato</a></li>
-                <li class="nav" id="admin"><a href="admin.html">Administração</a></li>
-            </ul>
-            <button class="usuario">
-                <i class="fa-solid fa-user" id="userIcon"></i>
-            </button>
-        </nav>
-            <button class="menu-toggle">☰</button>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li id="admin"><a href="admin.html">Administração</a></li>
-                </ul>
-            </nav>
-    </header>
-    <main>
-        <section class="conteudo">
-            <h1>Contato</h1>
-            <form id="formEmail" novalidate>
-                <label for="nome">Nome:</label><br>
-                <input type="text" name="nome" id="nome" required><br><br>
-
-                <label for="email">Email:</label><br>
-                <input type="text" name="email" id="email" required><br><br>
-
-                <label for="contato" class="inline">Tipo de Contato</label><br>
-                <select name="contato" id="contato" required>
-                    <option value="selecione">Selecione</option>
-                    <option value="sugestao">Sugestão</option>
-                    <option value="reclamacao">Reclamação</option>
-                    <option value="duvida">Dúvida</option>
-                    <option value="elogio">Elogio</option>
-                    <option value="outros">Outros</option>
-                </select><br><br>
-
-                <label for="texto">Mensagem:</label><br>
-                <textarea rows="5" id="texto" name="texto" required></textarea><br><br>
-
-                <button type="submit" class="Botão" id="btnSubmit">Enviar</button>
-            </form>
-        </section>
-    </main>
-    <footer class="pe">
-
-        <h3>Oficina Viçosa</h3>
-
-        <p>
-            Especializada em manutenção automotiva com qualidade,
-            confiança e excelência.
-        </p>
-
-        <div class="redes">
-            <a href="https://wa.me/" target="_blank" class="whatsapp icone">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://instagram.com/" target="_blank" class="instagram icone">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/" target="_blank" class="tiktok icone">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" class="twitter icone">
-                <i class="fa-brands fa-x"></i>
-            </a>
-            <a href="https://www.youtube.com/" target="_blank" class="youtube icone">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-        </div>
-
-        <p>
-            © 2025 Oficina Viçosa - Todos os direitos reservados.
-        </p>
-
-    </footer>
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <span class="fechar">&times;</span>
-            <h2>Login</h2>
-            <form id="formLogin" novalidate>
-                <input type="text" name="Email" placeholder="Email" id="EmailLogin" required autocomplete="email">
-                <input type="password" name="Senha" placeholder="Senha" class="inputSenha" id="SenhaLogin" required>
-                <button type="submit" class="btnSubmit" id="btnSubmitLogin">Entrar</button>
-            </form>
-            <p>
-                Não tem uma conta?
-            </p>
-            <a href="#" id="abrirCadastro">Cadastre-se</a>
-        </div>
-    </div>
-    <div class="modal" id="cadastroModal">
-        <div class="modal-content">
-            <span class="fechar">&times;</span>
-            <h2>Cadastro</h2>
-            <form id="formCadastro" novalidate>
-                <input type="text" name="email" placeholder="Email" required class="inputEmail" id="EmailCadastro" autocomplete="email">
-                <input type="password" name="senha" placeholder="Senha" required id="SenhaCadastro">
-                <input type="password" name="confirmarSenha" required placeholder="Confirmar Senha" class="inputSenha" id="ConfirmarSenhaCadastro">
-                <button type="submit" class="btnSubmit" id="btnSubmitCadastro">Cadastrar</button>
-            </form>
-        </div>
-    </div>
-    <div class="modal" id="perfilModal">
-        <div class="modal-content">
-            <span class="fechar" id="fecharPerfil">&times;</span>
-            <h2>Meu Perfil</h2>
-            <div class="dadosUsuario">
-                <p>
-                    <strong>Nome:</strong>
-                    <span id="nomeUsuario"></span>
-                </p>
-                <p>
-                    <strong>Email:</strong>
-                    <span id="emailUsuario"></span>
-                </p>
-            </div>
-            <button class="btnSubmit" id="btnSair">
-                Sair
-            </button>
-        </div>
-    </div>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" defer></script>
-    <script src="../view/carrossel.js" defer></script>
-    <script src="../view/validacao.js" defer></script>
-    <script src="../view/script.js" defer></script>
+    <script src="../../Backend/api.js" defer></script>
+    <script src="../../frontend/view/carrossel.js" defer></script>
+    <script src="../../frontend/view/script.js" defer></script>
+    <script src="../view/usuario-view.js" defer></script>
     <script src="../view/login.js" defer></script>
-    <script src="../view/auth.js" defer></script>    
+    <script src="../view/auth.js" defer></script>
     <script src="../view/perfil.js" defer></script>
+    <script src="../../frontend/controller/editar_usuario.js" defer></script>
+    <script src="../../frontend/controller/buscar_usuarios.js" defer></script>
     <script src="../../frontend/controller/criar_usuario.js" defer></script>
+    <script src="../controller/api-usuarios.js" defer></script>
+    <script src="../../frontend/controller/excluir_usuarios.js" defer></script>
 
-    <script defer>
-        const nomeInput = document.getElementById('nome');
-        const emailInput = document.getElementById('email');
-        const contatoSelect = document.getElementById('contato');
-        const txtMensagem = document.getElementById('texto');
-        const btnSubmit = document.getElementById('btnSubmit');
-        const form = document.getElementById('formEmail');
+</head>
 
-        function validarEmail2(email){
-            const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return padrao.test(email);
+<body class="contato">
+
+<header class="cabecalho">
+    <img src="../Imagens/gray.png" class="Logo">
+
+    <nav class="nav-list">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+
+        <button class="usuario">
+            <i class="fa-solid fa-user" id="userIcon"></i>
+        </button>
+    </nav>
+</header>
+
+<main>
+    <section class="conteudo">
+        <h1>Contato</h1>
+
+        <form id="formEmail" novalidate>
+
+            <label>Nome:</label>
+            <input type="text" id="nome" name="nome">
+
+            <label>Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label>Tipo de Contato:</label>
+            <select id="contato" name="contato">
+                <option value="selecione">Selecione</option>
+                <option value="sugestao">Sugestão</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="duvida">Dúvida</option>
+                <option value="elogio">Elogio</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <label>Mensagem:</label>
+            <textarea id="texto" name="texto" rows="5"></textarea>
+
+            <button type="submit" class="Botão" id="btnSubmit">
+                Enviar
+            </button>
+
+        </form>
+    </section>
+</main>
+
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <h2>Login</h2>
+        <form id="formLogin">
+            <input type="text" id="EmailLogin" placeholder="Email">
+            <input type="password" id="SenhaLogin" placeholder="Senha">
+            <button type="submit" class="btnSubmit">Entrar</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="cadastroModal">
+    <div class="modal-content">
+        <span class="fechar">&times;</span>
+        <h2>Cadastro</h2>
+        <form id="formCadastro">
+            <input type="text" id="EmailCadastro" placeholder="Email">
+            <input type="password" id="SenhaCadastro" placeholder="Senha">
+            <button type="submit" class="btnSubmit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal" id="perfilModal">
+    <div class="modal-content">
+        <span class="fechar" id="fecharPerfil">&times;</span>
+
+        <h2>Meu Perfil</h2>
+
+        <p>Nome: <span id="nomeUsuario"></span></p>
+        <p>Email: <span id="emailUsuario"></span></p>
+
+        <button class="btnSubmit" id="btnSair">Sair</button>
+    </div>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("OEquGiC5Rsa2tjwBw");
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("formEmail");
+
+    const nomeInput = document.getElementById("nome");
+    const emailInput = document.getElementById("email");
+    const contatoSelect = document.getElementById("contato");
+    const mensagemInput = document.getElementById("texto");
+
+    function validarEmail(email){
+        const padrao = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return padrao.test(email);
+    }
+
+    function validarCampos(){
+
+        if(nomeInput.value.trim() === "" ||
+           emailInput.value.trim() === "" ||
+           mensagemInput.value.trim() === ""){
+
+            swal("Erro", "Preencha todos os campos", "error");
+            return false;
         }
-        function validarCampos2(){
-            const nome = nomeInput.value.trim();
-            const email = emailInput.value.trim();
-            const contato = contatoSelect.value;
-            const mensagem = txtMensagem.value.trim();
 
-            if(nome === "" || email === "" || mensagem === "" || contato === ""){
-                console.log("Erro")
-                swal({
-                    title: "Erro!",
-                    text: "Por favor, preencha todos os campos.",
-                    icon: "error",
-                    button: "OK",
-                    closeOnClickOutside: false,
-                    closeOnEsc: false,
-                })
-                return false;
-            }
-            if(contato === "selecione"){
-                console.log("erro2")
-                swal({
-                    title: "Erro!",
-                    text: "Por favor, escolha o motivo do contato.",
-                    icon: "error",
-                    button: "OK",
-                    closeOnClickOutside: false,
-                    closeOnEsc: false,
-                })
-                return false;
-            }
-            if(!validarEmail2(email)){
-                console.log("erro3")
-                swal({
-                    title: "Erro!",
-                    text: "Por favor, digite um email válido.",
-                    icon: "error",
-                    button: "OK",
-                    closeOnClickOutside: false,
-                    closeOnEsc: false,
-                })
-                return false;
-            }
-            return true;
+        if(contatoSelect.value === "selecione"){
+
+            swal("Erro", "Selecione o tipo de contato", "error");
+            return false;
         }
-            document.getElementById("formEmail").addEventListener("submit", function(event){
-            event.preventDefault();
 
-            if (!validarCampos2()) return;
-            
-            console.log("erro4")
-            swal({
-                title: "Sucesso!",
-                text: "Sua mensagem foi enviada com sucesso.",
-                icon: "success",
-                button: "OK",
-                closeOnClickOutside: false,
-                closeOnEsc: false,
-            })
+        if(!validarEmail(emailInput.value)){
+
+            swal("Erro", "Email inválido", "error");
+            return false;
+        }
+
+        return true;
+    }
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if(!validarCampos()) return;
+
+        emailjs.sendForm(
+            "service_va8j8f5",
+            "template_9pep37f",
+            form
+        ).then(() => {
+
+            swal("Sucesso!", "Mensagem enviada!", "success");
             form.reset();
-        });
-    </script>
 
-    
+        }).catch((err) => {
+
+            swal("Erro", "Falha ao enviar: " + err.text, "error");
+
+        });
+
+    });
+
+});
+</script>
+
 </body>
 </html>

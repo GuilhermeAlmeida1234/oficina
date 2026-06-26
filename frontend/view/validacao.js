@@ -103,7 +103,7 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
 
         const resposta =
             await fetch(
-                "http://localhost:3000/usuarios/login",
+                `${API}/usuarios/login`,
                 {
                     method: "POST",
                     headers: {
@@ -164,7 +164,7 @@ document.getElementById("formCadastro").addEventListener("submit", async (e) => 
     try {
 
         const resposta = await fetch(
-                "http://localhost:3000/usuarios",
+                `${API}/usuarios`,
                 {
                     method: "POST",
                     headers: {

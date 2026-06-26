@@ -1,5 +1,5 @@
 function obterUsuarios() {
-    return fetch("http://localhost:3000/usuarios", {
+    return fetch(`${API}/usuarios`, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -13,7 +13,7 @@ function atualizarUsuario(id, usuario) {
     const token = localStorage.getItem("token");
 
 
-    return fetch(`http://localhost:3000/usuarios/${id}`, {
+    return fetch(`${API}/usuarios/${id}`, {
 
 
         method: "PUT",

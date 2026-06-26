@@ -6,7 +6,7 @@ document.getElementById("formLogin").addEventListener("submit", async (e) => {
     const senha = document.getElementById("SenhaLogin").value;
 
 
-    fetch("https://oficina7.onrender.com", {
+    fetch(`${API}/usuarios/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
