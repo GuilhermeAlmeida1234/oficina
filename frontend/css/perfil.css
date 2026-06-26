@@ -37,3 +37,44 @@
     cursor:pointer;
     border:none;
 }
+
+.formEmail{
+    display: inline;
+}
+
+
+
+.inputNome{
+    display: flex;
+    margin-top: 15px;
+}
+
+.inputEmail{
+    display: flex;
+    margin-top: 15px;
+}
+
+.mensagemArea{
+    display: flex;
+    margin-top: 15px;
+}
+.areaTexto{
+    display: flex;
+    padding-left: 15px;
+}
+
+.tipoContato{
+    display: flex;
+    margin-top: 15px;
+}
+
+.Botão{
+    display: flex;
+    margin-top: 15px;
+}
+
+/* .conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

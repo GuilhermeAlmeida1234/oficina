@@ -67,16 +67,30 @@
         <section class="conteudo">
             <h1>Contato</h1>
 
-            <form id="formEmail" novalidate>
+            <form class="formCadastro" id="formEmail" novalidate style="display: inline;">
 
-                <label>Nome:</label>
-                <input type="text" id="nome" name="nome">
-
-                <label>Email:</label>
-                <input type="text" id="email" name="email">
-
-                <label>Tipo de Contato:</label>
-                <select id="contato" name="contato">
+                <section>
+                    <label>Nome:</label>                  
+                </section>
+                    
+                <section>
+                    <input class="inputNome" type="text" id="nome" name="nome">
+                </section>
+                
+                <section>
+                        <label class="inputEmail">Email:</label>                        
+                </section>
+                    
+                <section>
+                    <input type="text" id="email" name="email">
+                </section>
+            
+                <section>
+                    <label class="tipoContato">Tipo de Contato:</label>
+                </section>
+                
+                <section class="opcoes">
+                    <select id="contato" name="contato">   
                     <option value="selecione">Selecione</option>
                     <option value="sugestao">Sugestão</option>
                     <option value="reclamacao">Reclamação</option>
@@ -84,9 +98,16 @@
                     <option value="elogio">Elogio</option>
                     <option value="outros">Outros</option>
                 </select>
+                </section>
+                
 
-                <label>Mensagem:</label>
-                <textarea id="texto" name="texto" rows="5"></textarea>
+                
+                
+            <section>
+                <label class="mensagemArea">Mensagem:</label>
+                <textarea class="areaTexto" id="texto" name="texto" rows="5"></textarea>
+            </section>
+                
 
                 <button type="submit" class="Botão" id="btnSubmit">
                     Enviar
