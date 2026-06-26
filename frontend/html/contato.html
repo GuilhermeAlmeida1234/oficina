@@ -47,19 +47,28 @@
 <body class="contato">
 
     <header class="cabecalho">
-        <img src="../Imagens/gray.png" class="Logo">
-
+        <img src="../Imagens/gray.png" alt="Logo da Oficina" class="Logo">
         <nav class="nav-list">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="#">Contato</a></li>
+                <li class="nav" id="home"><a href="#">Início</a></li>
+                <li class="nav" id="servicos"><a href="servicos.html">Serviços</a></li>
+                <li class="nav" id="sobre"><a href="sobre.html">Sobre Nós</a></li>
+                <li class="nav" id="contato"><a href="contato.html">Contato</a></li>
+                <li class="nav" id="admin"><a href="admin.html">Administração</a></li>
             </ul>
-
             <button class="usuario">
                 <i class="fa-solid fa-user" id="userIcon"></i>
             </button>
+        </nav>
+        <button class="menu-toggle">☰</button>
+        <nav class="menu">
+            <ul>
+                <li><a href="base.html">Início</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li id="admin"><a href="admin.html">Administração</a></li>
+            </ul>
         </nav>
     </header>
 
