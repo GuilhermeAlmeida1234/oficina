@@ -17,7 +17,7 @@
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
-        z-index: 20000;
+        z-index: 2000000;
     }
     .menu ul{
         display: flex;
