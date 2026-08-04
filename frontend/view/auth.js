@@ -1,4 +1,4 @@
-function logout(){
+function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("usuario");
 
@@ -20,5 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         admin.style.display = "none";
     }
-
 });
